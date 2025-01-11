@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Muhammed John</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e1e2f, #3c3c54);
+            color: #fff;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .nav-links a.active {
+            background: #1b5f5f;
+            color: #000;
+        }
+
+        .nav-links a:hover {
+            background: #00cec9;
+            color: #000;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -200px; /* Start off-screen */
+            width: 200px; /* Reduced width */
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            transition: left 0.3s ease;
+            z-index: 1001;
+            padding: 2rem 1rem;
+            display: none; /* Initially hidden */
+        }
+
+        .sidebar.active {
+            left: 0;
+            display: block; /* Show when active */
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 0;
+            font-weight: bold;
+            border-bottom: 1px solid #444;
+            transition: background 0.3s;
+        }
+
+
+        .sidebar a:hover {
+            background: #00cec9;
+            color: #000;
+        }
+
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 2rem;
+            color: #fff;
+            z-index: 1002;
+        }
+
+        /* Contact Section Styling */
+        .contact-section {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 3rem 2rem;
+            margin-top: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #00cec9;
+        }
+
+        .contact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1.5rem;
+            justify-items: center;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            padding: 1rem 2rem;
+            border-radius: 50%;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-link.linkedin { background-color: #0077b5; }
+        .social-link.github { background-color: #24292f; }
+        .social-link.kaggle { background-color: #20beff; }
+        .social-link.instagram { background-color: #e4405f; }
+        .social-link.whatsapp { background-color: #25d366; }
+        .social-link.email { background-color: #f39c12; }
+        .social-link.hackerrank { background-color: #2EC866; }
+
+        .social-link i {
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            background: #00cec9;
+            margin: 3rem 0;
+        }
+
+        h3 {
+            color:  #00cec9;
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+        form {
+            margin-top: 2rem;
+        }
+
+        input, textarea {
+            padding: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            background: #f9f9f9;
+            color: #333;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .name-surname-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        input.inline {
+            width: 48%;
+        }
+
+        textarea {
+            width: 95%;
+            resize: none;
+        }
+
+        .back-home-btn {
+            background: #00cec9;
+            color: #000;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        button.cta {
+            background: #00cec9;
+            color: #000;
+            padding: 0.6rem 1.3rem;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        button.cta:hover, .back-home-btn:hover {
+            background: #00b894;
+        }
+
+        #msg {
+            background-color: greenyellow;
+            padding: 0.4rem;
+            border-radius: 5px;
+            color: #000;
+            font-weight: bold;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+
+
+        /* Contact Details Styling */
+        .contact-details {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-details p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-details a {
+            color: #00cec9;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: #00b894;
+        }
+
+
+        .back-home-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .back-home-btn {
+            background: #00cec9;
+            color: #000;
+            padding: 0.7rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+
+        .back-home-btn:hover {
+            background: #00b894;
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .logo {
+                font-size: 1rem; /* Reduced font size */
+            }
+        
+            .sidebar a {
+                width: 100%;
+                padding: 0.8rem 1.5rem; /* Adjusted padding */
+                text-align: left;
+                font-size: 0.9rem; /* Reduced sidebar link size */
+            }
+        
+            .sidebar a.active {
+                background: #1b5f5f;
+                color: black;
+            }
+
+            footer {
+                font-size: 0.9rem; /* Reduced footer font size */
+            }
+
+            .social-link {
+                width: 80px;
+                height: 65px;
+                padding: 0.7rem 1.7rem;
+            }
+
+            /* Reduce font sizes for smaller screens */
+            .contact-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .contact-section p {
+                font-size: 1rem;
+            }
+
+            .social-link {
+                font-size: 1.2rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .social-link i {
+                font-size: 1.2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            input, textarea {
+                font-size: 0.9rem;
+            }
+
+
+            .back-home-btn {
+                font-size: 1rem;
+            }
+
+            .contact-details p {
+                font-size: 1rem;
+            }
+            .comment-form .cta {
+                font-size: 0.9rem; 
+                padding: 0.4rem 0.8rem; 
+            }
+
+            .back-home-btn {
+                font-size: 1.1rem; /* Reduced button text size */
+                padding: 0.55rem 1rem; /* Adjusted padding */
+            }
+
+            button.cta {
+                padding: 0.4rem 1.2rem;
+            }
+
+            #msg {
+                font-size: 0.7rem;
+            }
+
+        }
+
+        /* For very small devices (mobile phones) */
+        @media only screen and (max-width: 640px) {
+            .social-link {
+                width: 70px;
+                height: 45px;
+                padding: 0.5rem 1.4rem;
+            }
+
+            .contact-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .contact-section p {
+                font-size: 0.9rem;
+            }
+
+            .social-link {
+                font-size: 1rem;
+                padding: 0.7rem 1.3rem;
+            }
+
+            .social-link i {
+                font-size: 1.rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            input, textarea {
+                font-size: 0.8rem;
+            }
+
+
+            .back-home-btn {
+                font-size: 0.9rem; /* Smaller button font size */
+                padding: 0.6rem 1rem; /* Adjusted padding */
+            }
+
+            .contact-details p {
+                font-size: 0.9rem;
+            }
+            
+
+            .logo {
+                font-size: 0.9rem; /* Further reduced logo font size */
+            }
+
+            .sidebar a {
+                font-size: 0.8rem; /* Smaller sidebar links */
+                padding: 0.6rem 1rem; /* Adjusted padding */
+            }
+
+            footer {
+                font-size: 0.8rem; /* Smaller footer font size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">💡 The John Archive</div>
+            <div class="hamburger">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="contact.html" class="active">Contact</a>
+    </div>
+
+    <section id="contact" class="contact-section">
+        <div class="section-content">
+            <h2>Contact Me</h2>
+            <p>If you'd like to get in touch, feel free to connect with me on any of the platforms below:</p>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/Maha-Jr" target="_blank" class="social-link linkedin">Linked <i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Maha-Jr10" target="_blank" class="social-link github"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.kaggle.com/muhammedjohn" target="_blank" class="social-link kaggle"><i class="fab fa-kaggle"></i> aggle</a>
+                <a href="https://www.hackerrank.com/Muhammedjohn3" target="_blank" class="social-link hackerrank"><i class="fab fa-hackerrank"></i> ackerRank</a>
+                <a href="https://www.instagram.com/_maha_jr_" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://wa.me/+212697882357" target="_blank" class="social-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="mailto:muhammedjohnappleid@gmail.com" class="social-link email"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+
+            <hr>
+
+            <h3>What's your take on this?</h3>
+            <p>I would love to hear your thoughts! Please fill out the form below:</p>
+
+            <form name="submit-to-google-sheet" id="comment-form">
+                <div class="name-surname-container">
+                    <input type="text" id="name" name="name" class="inline" placeholder="Enter your name" required>
+                    <input type="text" id="surname" name="surname" class="inline" placeholder="Enter your surname" required>
+                </div>
+                <textarea id="comment" name="comment" rows="4" placeholder="Enter your comment here..." required></textarea>
+                <button type="submit" class="cta">Send</button>
+            </form>            
+
+            <div id="msg"></div>
+            
+        </div>
+    </section>
+
+    <section class="contact-details">
+        <p>Email: <a href="mailto:muhammedjohn3@gmail.com">muhammedjohn3@gmail.com</a></p>
+        <p>Phone: <a href="tel:+212647466338">+212 647 46 63 38</a></p>
+    </section>
+      
+    <div class="back-home-container">
+        <a href="index.html" class="back-home-btn">Back to Home</a>
+    </div>
+
+    <footer>
+        <p>© 2025 Muhammed John | Data Science & AI Engineering</p>
+    </footer>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzylcp9uKSP6C_bBPWNQdLysi4ONM_E6JmCs9K37k4M79QpkgMktucTgoTWUIgrIdg6/exec'; // Replace with your actual Google Apps Script URL
+        const form = document.forms['submit-to-google-sheet'];
+        const msg = document.getElementById("msg");
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            msg.style.display = "inline-block";
+            msg.innerHTML = "Sending...";
+        
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    if (response.ok) {
+                        msg.innerHTML = "Message sent successfully!";
+                        setTimeout(function(){
+                            msg.innerHTML = "";
+                            msg.style.display = "none";
+                        }, 5000);
+                        form.reset();
+                    } else {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    msg.innerHTML = `Error: ${error.message}`;
+                    setTimeout(function(){
+                        msg.innerHTML = "";
+                        msg.style.display = "none";
+                    }, 4000);
+                });
+        });
+        
+
+        // Sidebar toggle functionality for mobile and tablets
+        const hamburger = document.querySelector(".hamburger");
+        const sidebar = document.querySelector(".sidebar");
+
+        hamburger.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+        });
+
+    </script>
+</body>
+</html>

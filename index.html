@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Muhammed John</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e1e2f, #3c3c54);
+            color: #fff;
+        }
+
+        /* Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0px 0px 10px cyan,
+                         0px 0px 20px cyan,
+                         0px 0px 40px cyan,
+                         0px 0px 80px cyan;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background: #00cec9;
+            color: #000;
+        }
+
+        .nav-links a.active {
+            background: #1b5f5f;
+            color: #000;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -200px; /* Start off-screen */
+            width: 200px; /* Reduced width */
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            transition: left 0.3s ease;
+            z-index: 1001;
+            padding: 2rem 1rem;
+            display: none; /* Initially hidden */
+        }
+
+        .sidebar.active {
+            left: 0;
+            display: block; /* Show when active */
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 0;
+            font-weight: bold;
+            border-bottom: 1px solid #444;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: #00cec9;
+            color: #000;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 2rem;
+            color: #fff;
+            z-index: 1002;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(-45deg, #1e1e2f, #00cec9, #3c3c54, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradient-move 15s ease infinite;
+            height: 100vh;
+        }
+
+        .hero-content {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+            animation: fadeIn 2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-pic {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            margin-top: 1rem; 
+            border: 3px solid #00cec9;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-top: 2px;
+            margin-bottom: 1rem;
+            color: #00cec9;
+        }
+
+        .typewriter {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .cta {
+            background: #00cec9;
+            color: #000;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .cta:hover {
+            background: #00b894;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradient-move {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Media Queries for Responsiveness */
+
+        /* For small devices (mobile phones and tablets) */
+        @media only screen and (max-width: 1024px) {
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .logo {
+                font-size: 1rem; /* Reduced font size */
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+                height: auto;
+                flex-direction: column;
+            }
+
+            .profile-pic {
+                width: 150px; /* Smaller image */
+                height: 150px;
+            }
+
+            h1 {
+                font-size: 2rem; /* Reduced heading size */
+            }
+
+            .cta {
+                font-size: 0.9rem; /* Reduced button text size */
+                padding: 0.4rem 0.8rem; /* Adjusted padding */
+            }
+
+            .typewriter {
+                font-size: 1rem; /* Reduced typewriter effect text size */
+            }
+
+            .sidebar a {
+                width: 100%;
+                padding: 0.8rem 1.5rem; /* Adjusted padding */
+                text-align: left;
+                font-size: 0.9rem; /* Reduced sidebar link size */
+            }
+
+            .sidebar a.active {
+                background: #1b5f5f;
+                color: black;
+            }
+
+            footer {
+                font-size: 0.9rem; /* Reduced footer font size */
+            }
+        }
+
+        /* For very small devices (mobile phones) */
+        @media only screen and (max-width: 640px) {
+            .hero {
+                padding: 2rem 1rem; /* Further reduced padding */
+            }
+
+            .profile-pic {
+                width: 120px; /* Smaller image */
+                height: 120px;
+            }
+
+            h1 {
+                font-size: 1.8rem; /* Smaller heading */
+            }
+
+            .cta {
+                font-size: 0.8rem; /* Smaller button text */
+                padding: 0.3rem 0.7rem; /* Adjusted padding */
+            }
+
+            .typewriter {
+                font-size: 0.9rem; /* Smaller typewriter text */
+            }
+
+            .logo {
+                font-size: 0.9rem; /* Further reduced logo font size */
+            }
+
+            .sidebar a {
+                font-size: 0.8rem; /* Smaller sidebar links */
+                padding: 0.6rem 1rem; /* Adjusted padding */
+            }
+
+            footer {
+                font-size: 0.8rem; /* Smaller footer font size */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">💡 The John Archive</div>
+            <div class="hamburger">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio! 🚀</h1>
+            <img src="images/profile photo rd.jpg" alt="Muhammed John" class="profile-pic">
+            <p class="typewriter"></p>
+            <a href="about.html" class="cta">Who I Am</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Muhammed John | Data Science & AI Engineering</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const text = "Exploring the intersection of Data Science and Artificial Intelligence to drive innovation.";
+            const heroText = document.querySelector(".typewriter");
+            let index = 0;
+
+            function typeEffect() {
+                if (index < text.length) {
+                    heroText.textContent += text[index];
+                    index++;
+                    setTimeout(typeEffect, 50);
+                }
+            }
+
+            typeEffect();
+        });
+
+        // Sidebar toggle functionality for mobile and tablets
+        const hamburger = document.querySelector(".hamburger");
+        const sidebar = document.querySelector(".sidebar");
+
+        hamburger.addEventListener("click", () => {
+            sidebar.classList.toggle("active"); // Toggle visibility
+        });
+    </script>
+</body>
+</html>

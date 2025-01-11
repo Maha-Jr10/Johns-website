@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates - Muhammed John</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e1e2f, #3c3c54);
+            color: #fff;
+        }
+
+        /* Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+        .nav-links a.active {
+            background: #1b5f5f;
+            color: black;
+        }
+
+        .nav-links a:hover {
+            background: #00cec9;
+            color: #000;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -200px; /* Start off-screen */
+            width: 200px; /* Reduced width */
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            transition: left 0.3s ease;
+            z-index: 1001;
+            padding: 2rem 1rem;
+            display: none; /* Initially hidden */
+        }
+
+        .sidebar.active {
+            left: 0;
+            display: block; /* Show when active */
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 0;
+            font-weight: bold;
+            border-bottom: 1px solid #444;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: #00cec9;
+            color: #000;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 2rem;
+            color: #fff;
+            z-index: 1002;
+        }
+
+
+        .certificate-section,
+        .achievement-section {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .certificate-section h1,
+        .achievement-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #00cec9;
+        }
+
+        .certificate-grid,
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .certificate-card,
+        .achievement-card {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .certificate-card:hover,
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .certificate-card h2,
+        .achievement-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #00cec9;
+        }
+
+        .certificate-card p,
+        .achievement-card p {
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        /* Count Badge */
+        .count-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #00cec9;
+            color: #000;
+            border-radius: 50%;
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            animation: pop-in 0.5s ease;
+        }
+
+        /* Tooltip Styling */
+        .count-badge:hover::after {
+            content: attr(title);
+            position: absolute;
+            top: -30px;
+            right: 50%;
+            transform: translateX(50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            animation: tooltip-fade-in 0.3s forwards;
+        }
+
+        /* Back to Home Button */
+        .back-home-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .back-home-btn {
+            background: #00cec9;
+            color: #000;
+            padding: 0.7rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+
+        .back-home-btn:hover {
+            background: #00b894;
+        }
+
+        @keyframes tooltip-fade-in {
+            0% {
+                opacity: 0;
+                top: -40px;
+            }
+            100% {
+                opacity: 1;
+                top: -30px;
+            }
+        }
+
+        @keyframes pop-in {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 80%;
+            max-height: 90%;
+            overflow: auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal img {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            max-width: 500px;
+            margin-bottom: 10px;
+        }
+
+        .modal img.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .modal img + img {
+            margin-top: 10px;
+        }
+
+        .modal-close {
+            background: #e74c3c;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .modal-close:hover {
+            background: #c0392b;
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .logo {
+                font-size: 0.8rem; /* Reduced font size */
+            }
+        
+            .sidebar a {
+                width: 100%;
+                padding: 0.8rem 1.5rem; /* Adjusted padding */
+                text-align: left;
+                font-size: 0.9rem; /* Reduced sidebar link size */
+            }
+
+            .sidebar a.active {
+                background: #1b5f5f;
+                color: black;
+            }
+
+            /* Reduce font sizes for smaller screens */
+            .certificate-section h1,
+            .achievement-section h1 {
+                font-size: 1.8rem; /* Adjusted from 2.5rem */
+            }
+
+            .certificate-card h2,
+            .achievement-card h2 {
+                font-size: 1.2rem; /* Adjusted from 1.5rem */
+            }
+
+            .certificate-card p,
+            .achievement-card p {
+                font-size: 0.9rem; /* Adjusted from 1rem */
+            }
+
+            .back-home-btn {
+                font-size: 1rem; /* Adjusted from 1.2rem */
+            }
+
+            .count-badge {
+                font-size: 1rem; /* Adjusted from 1.2rem */
+            }
+
+            /* Footer */
+            footer {
+                font-size: 0.9rem; /* Reduced footer text size */
+            }
+
+            .back-home-btn {
+                font-size: 1.1rem; /* Reduced button text size */
+                padding: 0.55rem 1rem; /* Adjusted padding */
+            }
+
+        }
+
+    </style>
+    <style>
+        /* Existing styles above... */
+    
+        @media only screen and (max-width: 640px) {
+            /* Adjust font sizes for mobile screens */
+            .certificate-section h1,
+            .achievement-section h1 {
+                font-size: 1.4rem; /* Adjusted from 2.5rem */
+            }
+    
+            .certificate-card h2,
+            .achievement-card h2 {
+                font-size: 1.1rem; /* Adjusted from 1.5rem */
+            }
+    
+            .certificate-card p,
+            .achievement-card p {
+                font-size: 0.8rem; /* Adjusted from 1rem */
+            }
+    
+            .back-home-btn {
+                font-size: 0.9rem; /* Smaller button font size */
+                padding: 0.6rem 1rem; /* Adjusted padding */
+            }
+    
+            .count-badge {
+                font-size: 0.9rem; /* Adjusted from 1.2rem */
+            }
+
+            /* Navbar */
+            .logo {
+                font-size: 0.8rem; /* Further reduced logo font size */
+            }
+        
+            .sidebar a {
+                font-size: 0.8rem; /* Smaller sidebar links */
+                padding: 0.6rem 1rem; /* Adjusted padding */
+            }
+
+            /* Footer */
+            footer {
+                font-size: 0.8rem; /* Smaller footer text size */
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">💡 The John Archive</div>
+            <div class="hamburger">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certificates.html" class="active">Certificates</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certificates.html" class="active">Certificates</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <section class="certificate-section">
+        <h1>My Certificates</h1>
+        <p>Click on a certificate to view it:</p>
+        <div class="certificate-grid">
+            <div class="certificate-card" data-certificate="certificates/Oracle Certs/DD CC.png, certificates/Oracle Certs/DD EC.png">
+                <span class="count-badge" title="Number of certificates in this category">2</span>
+                <h2>Database Design</h2>
+                <p>Oracle</p>
+            </div>
+            <div class="certificate-card" data-certificate="certificates/Oracle Certs/SQL CC.png, certificates/Oracle Certs/SQL EC.png, certificates/HackerRank Certs/sql_advanced.png, certificates/HackerRank Certs/sql_inter.png, certificates/HackerRank Certs/sql_basic.png">
+                <span class="count-badge" title="Number of certificates in this category">5</span>
+                <h2>SQL</h2>
+                <p>Oracle, HackerRank</p>
+            </div>
+            <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Intro to Machine Learning.png">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h2>Intro to Machine Learning</h2>
+                <p>Kaggle</p>
+            </div>
+            <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Pandas.png">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h2>Pandas</h2>
+                <p>Kaggle</p>
+            </div>
+            <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Python.png, certificates/HackerRank Certs/python_basic.png">
+                <span class="count-badge" title="Number of certificates in this category">2</span>
+                <h2>Python</h2>
+                <p>Kaggle, HackerRank</p>
+            </div>
+            <div class="certificate-card" data-certificate="certificates/HackerRank Certs/sw.png">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h2>Software Engineer Intern Role</h2>
+                <p>HackerRank</p>
+            </div>
+            <div class="certificate-card" data-certificate="certificates/freeCodeCamp Certs/freeCodeCamp JavaScript Certificate.png, certificates/HackerRank Certs/JS inter.png, certificates/HackerRank Certs/JS basic.png">
+                <span class="count-badge" title="Number of certificates in this category">3</span>
+                <h2>JavaScript Algorithms and Data Structures</h2>
+                <p>freeCodeCamp, HackerRank</p>
+            </div>
+            <div class="certificate-card" data-certificate="certificates/freeCodeCamp Certs/freeCodeCamp Responsive Design Certificate.png, certificates/HackerRank Certs/CSS basic.png">
+                <span class="count-badge" title="Number of certificates in this category">2</span>
+                <h2>Responsive Web Design</h2>
+                <p>freeCodeCamp, HackerRank</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Documents Section -->
+    <section class="achievement-section">
+        <h1>Other Achievements & Documents</h1>
+        <p>Click on an achievement or document to view more:</p>
+        <div class="achievement-grid">
+            <div class="achievement-card" data-document="sql-5-star.pdf">
+                <span class="count-badge" title="Number of achievement(s)/document(s) in this category">1</span>
+                <h2>5-Star SQL Badge</h2>
+                <p>HackerRank Achievement</p>
+            </div>
+            <div class="achievement-card" data-document="CV.pdf">
+                <span class="count-badge" title="Number of achievement(s)/document(s) in this category">1</span>
+                <h2>MY CV</h2>
+                <p>Professional Document</p>
+            </div> 
+        </div>
+
+        <div class="back-home-container">
+            <a href="index.html" class="back-home-btn">Back to Home</a>
+        </div>
+
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="certificate-modal">
+        <div class="modal-content">
+            <div id="modal-images-container"></div>
+            <button class="modal-close">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Muhammed John | Data Science & AI Engineering</p>
+    </footer>
+    
+
+    <script>
+        const modal = document.getElementById('certificate-modal');
+        const modalImagesContainer = document.getElementById('modal-images-container');
+        const closeModalButton = document.querySelector('.modal-close');
+
+        document.querySelectorAll('.certificate-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const certificateSrc = card.getAttribute('data-certificate');
+                const srcArray = certificateSrc.split(',');
+
+                modalImagesContainer.innerHTML = '';
+
+                srcArray.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src.trim();
+                    img.alt = "Certificate Image";
+
+                    setTimeout(() => {
+                        img.classList.add('show');
+                    }, 50);
+
+                    modalImagesContainer.appendChild(img);
+                });
+
+                modal.style.display = 'flex';
+            });
+        });
+
+        document.querySelectorAll('.achievement-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const documentSrc = card.getAttribute('data-document');
+                
+                // Create an iframe for PDF or other document viewing
+                const iframe = document.createElement('iframe');
+                iframe.src = documentSrc;
+                iframe.style.width = '100%';
+                iframe.style.height = '80vh';
+                iframe.frameBorder = '0';
+                
+                modalImagesContainer.innerHTML = '';
+                modalImagesContainer.appendChild(iframe);
+
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeModalButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+            const images = modal.querySelectorAll('img');
+            images.forEach(img => img.classList.remove('show'));
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                const images = modal.querySelectorAll('img');
+                images.forEach(img => img.classList.remove('show'));
+            }
+        });
+
+        // Sidebar toggle functionality for mobile and tablets
+        const hamburger = document.querySelector(".hamburger");
+        const sidebar = document.querySelector(".sidebar");
+
+        hamburger.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>

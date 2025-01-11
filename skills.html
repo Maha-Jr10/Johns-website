@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Muhammed John</title>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e1e2f, #3c3c54);
+            color: #fff;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background: #00cec9;
+            color: #000;
+        }
+
+        .nav-links a.active {
+            background: #1b5f5f;
+            color: #000;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -200px; /* Start off-screen */
+            width: 200px; /* Reduced width */
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            transition: left 0.3s ease;
+            z-index: 1001;
+            padding: 2rem 1rem;
+            display: none; /* Initially hidden */
+        }
+
+        .sidebar.active {
+            left: 0;
+            display: block; /* Show when active */
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 0;
+            font-weight: bold;
+            border-bottom: 1px solid #444;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: #00cec9;
+            color: #000;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 2rem;
+            color: #fff;
+            z-index: 1002;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 3rem 2rem;
+            margin-top: 2rem;
+            border-radius: 10px;
+            color: #fff;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .skills-content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skills-text {
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #4e97d4; /* Different blue for h1 */
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            color: #00cec9;
+        }
+
+        strong{
+            color: #00cec9;
+        }
+
+        .skills-text p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px) scale(1.05); /* Zoom and Translate */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .skill-note {
+            font-size: 1rem;
+            margin-top: 1rem;
+            color: #fff;
+        }
+
+        /* Separation Line */
+        .separator-line {
+            margin-top: 2rem;
+            border-top: 2px solid #4e97d4; /* Light cyan color line */
+            width: 100%;
+        }
+
+        /* Back to Home Button */
+        .back-home-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .back-home-btn {
+            background: #00cec9;
+            color: #000;
+            padding: 0.7rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+
+        .back-home-btn:hover {
+            background: #00b894;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Media Queries for Responsiveness */
+@media only screen and (max-width: 1024px) {
+    /* Navbar */
+    .navbar {
+        padding: 0.8rem 1.5rem; /* Adjusted padding */
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .logo {
+        font-size: 0.8rem; /* Reduced font size */
+    }
+
+    .sidebar a {
+        width: 100%;
+        padding: 0.8rem 1.5rem; /* Adjusted padding */
+        text-align: left;
+        font-size: 0.9rem; /* Reduced sidebar link size */
+    }
+
+    .sidebar a.active {
+        background: #1b5f5f;
+        color: black;
+    }
+
+    /* Skills Section */
+    .skills-section {
+        padding: 2rem 1.5rem; /* Reduced padding */
+    }
+
+    .skills-text h1 {
+        font-size: 2.5rem; /* Reduced h1 size */
+    }
+
+    .skills-text p {
+        font-size: 1rem; /* Reduced paragraph font size */
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr; /* Adjusted grid for tablets */
+        gap: 1.5rem; /* Adjusted gap */
+    }
+
+    .skill-category h2 {
+        font-size: 1.5rem; /* Reduced h2 size */
+    }
+
+    .skill-category p {
+        font-size: 0.9rem; /* Reduced paragraph font size */
+    }
+
+    .skill-note {
+        font-size: 0.8rem; /* Smaller note font size */
+    }
+
+    footer {
+        font-size: 0.9rem; /* Reduced footer font size */
+    }
+
+    .back-home-btn {
+        font-size: 1.1rem; /* Reduced button text size */
+        padding: 0.55rem 1rem; /* Adjusted padding */
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    /* Navbar */
+    .logo {
+        font-size: 0.8rem; /* Further reduced logo font size */
+    }
+
+    .sidebar a {
+        font-size: 0.8rem; /* Smaller sidebar links */
+        padding: 0.6rem 1rem; /* Adjusted padding */
+    }
+
+    /* Skills Section */
+    .skills-section {
+        padding: 1.5rem 1rem; /* Further reduced padding */
+    }
+
+    .skills-text h1 {
+        font-size: 2rem; /* Smaller h1 size */
+    }
+
+    .skills-text p {
+        font-size: 0.9rem; /* Smaller paragraph font size */
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr; /* Display skills in 1 column on mobile */
+        gap: 1rem; /* Adjusted gap */
+    }
+
+    .skill-category h2 {
+        font-size: 1.2rem; /* Smaller h2 size */
+    }
+
+    .skill-category p {
+        font-size: 0.8rem; /* Smaller paragraph font size */
+    }
+
+    .skill-note {
+        font-size: 0.7rem; /* Even smaller note font size */
+    }
+
+    /* Back to Home Button */
+    .back-home-btn {
+        font-size: 0.9rem; /* Smaller button font size */
+        padding: 0.6rem 1rem; /* Adjusted padding */
+    }
+
+    footer {
+        font-size: 0.8rem; /* Smaller footer font size */
+    }
+}
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">💡 The John Archive</div>
+            <div class="hamburger">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <section id="skills" class="skills-section">
+        <div class="skills-content-container">
+            <div class="skills-text">
+                <h1>Skills</h1>
+                <p>With a strong foundation in both technical and analytical skills, I am well-equipped to tackle challenges in Data Science, AI Engineering, and web development.</p>
+
+                <div class="skills-grid">
+                    <!-- Programming Languages -->
+                    <div class="skill-category">
+                        <h2>Programming Languages</h2>
+                        <p><strong>Python, R, SQL, JavaScript, C, C++</strong></p>
+                        <p class="skill-note">These languages are essential for implementing data algorithms, performing statistical analysis, and building AI models. Python, in particular, is widely used in machine learning and data science.</p>
+                    </div>
+
+                    <!-- AI and Machine Learning -->
+                    <div class="skill-category">
+                        <h2>AI and Machine Learning</h2>
+                        <p><strong>Pandas, Scikit-Learn</strong></p>
+                        <p class="skill-note">AI and ML tools like Pandas and Scikit-Learn help in data manipulation, feature engineering, and building machine learning models, enabling predictions and insights from complex datasets.</p>
+                    </div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Data Visualization -->
+                    <div class="skill-category">
+                        <h2>Data Visualization</h2>
+                        <p><strong>Matplotlib, Seaborn, Plotly</strong></p>
+                        <p class="skill-note">Effective data visualization is crucial for communicating insights from data. These tools allow me to present complex data in clear and interactive formats.</p>
+                    </div>
+
+                    <!-- Web Development -->
+                    <div class="skill-category">
+                        <h2>Web Development</h2>
+                        <p><strong>HTML, CSS, JavaScript, Bootstrap</strong></p>
+                        <p class="skill-note">Building interactive and responsive web applications using modern front-end technologies such as HTML, CSS, and JavaScript.</p>
+                    </div>
+                </div>
+
+                <div class="separator-line"></div>
+
+                <div class="back-home-container">
+                    <a href="index.html" class="back-home-btn">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Muhammed John | Data Science & AI Engineering</p>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const sidebar = document.querySelector('.sidebar');
+
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+        
+    </script>
+</body>
+</html>
