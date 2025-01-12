@@ -12,7 +12,6 @@
             padding: 0;
             background: linear-gradient(135deg, #1e1e2f, #3c3c54);
             color: #fff;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         /* Navbar */
@@ -48,13 +47,14 @@
             border-radius: 5px;
         }
 
-        .nav-links a:hover {
-            background: #00cec9;
-            color: #000;
-        }
         .nav-links a.active {
             background: #1b5f5f;
             color: black;
+        }
+
+        .nav-links a:hover {
+            background: #00cec9;
+            color: #000;
         }
 
         /* Sidebar Styles */
@@ -86,12 +86,10 @@
             transition: background 0.3s;
         }
 
-
         .sidebar a:hover {
             background: #00cec9;
             color: #000;
         }
-
 
         .hamburger {
             display: none;
@@ -133,7 +131,7 @@
             animation: shake 1s infinite;
         }
 
-        .back-home-btn {
+        .next-page-btn {
             display: inline-block;
             margin-top: 2rem;
             padding: 1rem 2rem;
@@ -146,7 +144,7 @@
             transition: background 0.3s, transform 0.3s;
         }
 
-        .back-home-btn:hover {
+        .next-page-btn:hover {
             background: #00b894;
             transform: translateY(-3px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -185,9 +183,7 @@
         @media only screen and (max-width: 1024px) {
             /* Navbar */
             .navbar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+                padding: 0.8rem 1.5rem; /* Adjusted padding */
             }
 
             .nav-links {
@@ -201,7 +197,7 @@
             .logo {
                 font-size: 0.8rem; /* Reduced font size */
             }
-        
+
             .sidebar a {
                 width: 100%;
                 padding: 0.8rem 1.5rem; /* Adjusted padding */
@@ -213,6 +209,7 @@
                 background: #1b5f5f;
                 color: black;
             }
+
 
             /* Empty Section */
             .empty-section {
@@ -228,17 +225,12 @@
                 font-size: 1rem; /* Reduced message font size */
             }
 
-            .back-home-btn {
-                font-size: 1rem; /* Reduced button font size */
-                padding: 0.8rem 1.5rem; /* Adjusted padding */
-            }
-
             /* Footer */
             footer {
                 font-size: 0.9rem; /* Reduced footer text size */
             }
 
-            .back-home-btn {
+            .next-page-btn {
                 font-size: 1.1rem; /* Reduced button text size */
                 padding: 0.55rem 1rem; /* Adjusted padding */
             }
@@ -250,7 +242,7 @@
             .logo {
                 font-size: 0.8rem; /* Further reduced logo font size */
             }
-        
+
             .sidebar a {
                 font-size: 0.8rem; /* Smaller sidebar links */
                 padding: 0.6rem 1rem; /* Adjusted padding */
@@ -269,7 +261,7 @@
                 font-size: 0.9rem; /* Smaller message text */
             }
 
-            .back-home-btn {
+            .next-page-btn {
                 font-size: 0.9rem; /* Smaller button font size */
                 padding: 0.6rem 1rem; /* Adjusted padding */
             }
@@ -315,7 +307,7 @@
     <section class="empty-section">
         <h2>🚧 Under Construction 🚧</h2>
         <p class="message">Please check back later!</p>
-        <a href="index.html" class="back-home-btn">Back to Home</a>
+        <a href="certificates.html" class="next-page-btn">Next Page</a>
     </section>
 
     <footer>

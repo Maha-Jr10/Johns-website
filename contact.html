@@ -15,15 +15,22 @@
             color: #fff;
         }
 
+        /* Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            background: rgba(0, 0, 0, 0.8);
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            padding: 0 2rem;
         }
 
         .nav-links {
@@ -37,13 +44,13 @@
             text-decoration: none;
             font-weight: bold;
             padding: 0.5rem 1rem;
-            border-radius: 5px;
             transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
         }
 
         .nav-links a.active {
             background: #1b5f5f;
-            color: #000;
+            color: black;
         }
 
         .nav-links a:hover {
@@ -80,12 +87,10 @@
             transition: background 0.3s;
         }
 
-
         .sidebar a:hover {
             background: #00cec9;
             color: #000;
         }
-
 
         .hamburger {
             display: none;
@@ -296,10 +301,9 @@
         }
 
         @media only screen and (max-width: 1024px) {
+            /* Navbar */
             .navbar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+                padding: 0.8rem 1.5rem; /* Adjusted padding */
             }
 
             .nav-links {
@@ -311,16 +315,16 @@
             }
 
             .logo {
-                font-size: 1rem; /* Reduced font size */
+                font-size: 0.8rem; /* Reduced font size */
             }
-        
+
             .sidebar a {
                 width: 100%;
                 padding: 0.8rem 1.5rem; /* Adjusted padding */
                 text-align: left;
                 font-size: 0.9rem; /* Reduced sidebar link size */
             }
-        
+
             .sidebar a.active {
                 background: #1b5f5f;
                 color: black;
@@ -363,10 +367,6 @@
             }
 
 
-            .back-home-btn {
-                font-size: 1rem;
-            }
-
             .contact-details p {
                 font-size: 1rem;
             }
@@ -392,6 +392,17 @@
 
         /* For very small devices (mobile phones) */
         @media only screen and (max-width: 640px) {
+            /* Navbar */
+            .logo {
+                font-size: 0.8rem; /* Further reduced logo font size */
+            }
+
+            .sidebar a {
+                font-size: 0.8rem; /* Smaller sidebar links */
+                padding: 0.6rem 1rem; /* Adjusted padding */
+            }
+
+
             .social-link {
                 width: 70px;
                 height: 45px;
@@ -417,6 +428,14 @@
 
             h3 {
                 font-size: 1.3rem;
+            }
+
+            .name-surname-container {
+                display: block;
+            }
+
+            input.inline {
+                width: 95%;
             }
 
             input, textarea {

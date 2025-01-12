@@ -15,16 +15,21 @@
         }
 
         /* Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            padding: 0 2rem;
         }
 
         .nav-links {
@@ -33,27 +38,23 @@
             gap: 1rem;
         }
 
-        .nav-links a.active {
-            background: #1b5f5f;
-            color: black;
-        }
-
         .nav-links a {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
             padding: 0.5rem 1rem;
-            border-radius: 5px;
             transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+        .nav-links a.active {
+            background: #1b5f5f;
+            color: black;
         }
 
         .nav-links a:hover {
             background: #00cec9;
             color: #000;
-        }
-
-        .education-link {
-            background: #1b5f5f;
         }
 
         /* Sidebar Styles */
@@ -168,13 +169,13 @@
             width: 100%;
         }
 
-        .back-home-container {
+        .next-page-container {
             display: flex;
             justify-content: center;
             margin-top: 3rem;
         }
 
-        .back-home-btn {
+        .next-page-btn {
             background: #00cec9;
             color: #000;
             padding: 0.7rem 2rem;
@@ -185,7 +186,7 @@
             transition: background 0.3s;
         }
 
-        .back-home-btn:hover {
+        .next-page-btn:hover {
             background: #00b894;
         }
 
@@ -198,19 +199,35 @@
         }
 
         @media only screen and (max-width: 1024px) {
+            /* Navbar */
             .navbar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+                padding: 0.8rem 1.5rem; /* Adjusted padding */
             }
-        
+
             .nav-links {
                 display: none;
             }
-        
+
             .hamburger {
                 display: block;
             }
+
+            .logo {
+                font-size: 0.8rem; /* Reduced font size */
+            }
+
+            .sidebar a {
+                width: 100%;
+                padding: 0.8rem 1.5rem; /* Adjusted padding */
+                text-align: left;
+                font-size: 0.9rem; /* Reduced sidebar link size */
+            }
+
+            .sidebar a.active {
+                background: #1b5f5f;
+                color: black;
+            }
+
         
             .education-section {
                 padding: 2rem;
@@ -229,31 +246,11 @@
                 font-size: 1rem; /* Reduced from 1.1rem */
             }
         
-            .back-home-btn {
-                font-size: 1rem; /* Reduced from 1.2rem */
-            }
-        
             .sub-sections {
                 grid-template-columns: 1fr 1fr; /* Display sub-sections in 2 columns on tablets */
             }
-        
-            .logo {
-                font-size: 0.8rem; /* Reduced font size */
-            }
-        
-            .sidebar a {
-                width: 100%;
-                padding: 0.8rem 1.5rem; /* Adjusted padding */
-                text-align: left;
-                font-size: 0.9rem; /* Reduced sidebar link size */
-            }
-        
-            .sidebar a.active {
-                background: #1b5f5f;
-                color: black;
-            }
 
-            .back-home-btn {
+            .next-page-btn {
                 font-size: 1.1rem; /* Reduced button text size */
                 padding: 0.55rem 1rem; /* Adjusted padding */
             }
@@ -264,6 +261,7 @@
         }
         
         @media only screen and (max-width: 640px) {
+            /* Navbar */
             .logo {
                 font-size: 0.8rem; /* Further reduced logo font size */
             }
@@ -286,7 +284,7 @@
                 font-size: 0.9rem; /* Further reduced */
             }
         
-            .back-home-btn {
+            .next-page-btn {
                 font-size: 0.9rem; /* Smaller button font size */
                 padding: 0.6rem 1rem; /* Adjusted padding */
             }
@@ -350,7 +348,7 @@
                 <div class="sub-sections">
                     <div class="sub-section">
                         <h2>High School</h2>
-                        <p>At Nusrat, I joined the esteemed <strong>Science 1 class</strong>, where I completed Grades 10 to 12. In 2021, I graduated high school from Nusrat with <strong>good grades</strong>, making me a strong candidate for competitive scholarship applications. This milestone set the stage for my higher education journey.</p>
+                        <p>At Nusrat, I joined the esteemed <strong>Science 1 class</strong>, where I completed Grades 10 to 12. In 2021, I graduated high school from Nusrat with <strong>strong grades</strong>, making me a strong candidate for competitive scholarship applications. This milestone set the stage for my higher education journey.</p>
                     </div>
 
                     <div class="sub-section">
@@ -370,8 +368,8 @@
 
         <div class="separator-line"></div>
 
-        <div class="back-home-container">
-            <a href="index.html" class="back-home-btn">Back to Home</a>
+        <div class="next-page-container">
+            <a href="skills.html" class="next-page-btn">Next Page</a>
         </div>
     </section>
 
