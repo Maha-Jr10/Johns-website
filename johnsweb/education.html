@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Muhammed John</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e1e2f, #3c3c54);
+            color: #fff;
+        }
+
+        /* Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+        .nav-links a.active {
+            background: #1b5f5f;
+            color: black;
+        }
+
+        .nav-links a:hover {
+            background: #00cec9;
+            color: #000;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -200px; /* Start off-screen */
+            width: 200px; /* Reduced width */
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            transition: left 0.3s ease;
+            z-index: 1001;
+            padding: 2rem 1rem;
+            display: none; /* Initially hidden */
+        }
+
+        .sidebar.active {
+            left: 0;
+            display: block; /* Show when active */
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 0;
+            font-weight: bold;
+            border-bottom: 1px solid #444;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: #00cec9;
+            color: #000;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 2rem;
+            color: #fff;
+            z-index: 1002;
+        }
+
+        /* Education Section */
+        .education-section {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 3rem 2rem;
+            margin-top: 2rem;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .education-content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .education-text {
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #4e97d4; /* Different blue for h1 */
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            color: #00cec9;
+        }
+        
+        strong{
+            color: #00cec9;
+        }
+
+        .education-text p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Grid Layout for Sub-sections */
+        .sub-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two-column grid */
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .sub-section {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .sub-section h2 {
+            margin-top: 0;
+        }
+
+        .sub-section p {
+            margin-top: 1rem;
+        }
+
+        .separator-line {
+            margin-top: 2rem;
+            border-top: 2px solid #4e97d4;
+            width: 100%;
+        }
+
+        .next-page-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .next-page-btn {
+            background: #00cec9;
+            color: #000;
+            padding: 0.7rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+
+        .next-page-btn:hover {
+            background: #00b894;
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            /* Navbar */
+            .navbar {
+                padding: 0.8rem 1.5rem; /* Adjusted padding */
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .logo {
+                font-size: 0.8rem; /* Reduced font size */
+            }
+
+            .sidebar a {
+                width: 100%;
+                padding: 0.8rem 1.5rem; /* Adjusted padding */
+                text-align: left;
+                font-size: 0.9rem; /* Reduced sidebar link size */
+            }
+
+            .sidebar a.active {
+                background: #1b5f5f;
+                color: black;
+            }
+
+        
+            .education-section {
+                padding: 2rem;
+            }
+        
+            h1 {
+                font-size: 2.5rem; /* Reduced from 3rem */
+            }
+        
+            h2 {
+                font-size: 1.8rem; /* Reduced from 2rem */
+            }
+        
+            .education-text p,
+            .sub-section p {
+                font-size: 1rem; /* Reduced from 1.1rem */
+            }
+        
+            .sub-sections {
+                grid-template-columns: 1fr 1fr; /* Display sub-sections in 2 columns on tablets */
+            }
+
+            .next-page-btn {
+                font-size: 1.1rem; /* Reduced button text size */
+                padding: 0.55rem 1rem; /* Adjusted padding */
+            }
+
+            footer {
+                font-size: 0.9rem; /* Reduced footer font size */
+            }
+        }
+        
+        @media only screen and (max-width: 640px) {
+            /* Navbar */
+            .logo {
+                font-size: 0.8rem; /* Further reduced logo font size */
+            }
+
+            .sidebar a {
+                font-size: 0.8rem; /* Smaller sidebar links */
+                padding: 0.6rem 1rem; /* Adjusted padding */
+            }
+
+            h1 {
+                font-size: 2rem; /* Further reduced for smaller screens */
+            }
+        
+            h2 {
+                font-size: 1.5rem; /* Further reduced */
+            }
+        
+            .education-text p,
+            .sub-section p {
+                font-size: 0.9rem; /* Further reduced */
+            }
+        
+            .next-page-btn {
+                font-size: 0.9rem; /* Smaller button font size */
+                padding: 0.6rem 1rem; /* Adjusted padding */
+            }
+        
+            .sub-sections {
+                grid-template-columns: 1fr; /* Display sub-sections in 1 column on mobile */
+            }
+
+            footer {
+                font-size: 0.8rem; /* Smaller footer font size */
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">💡 The John Archive</div>
+            <div class="hamburger">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html" class="active">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="education.html" class="active">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <section id="education" class="education-section">
+        <div class="education-content-container">
+            <div class="education-text">
+                <h1>Educational Journey</h1>
+
+                <div class="sub-sections">
+                    <div class="sub-section">
+                        <h2>Early Years</h2>
+                        <p>I embarked on my educational journey at the tender age of 3, starting at <strong>Vine Excellent School</strong>, where I laid a solid foundation in academics from Nursery 1 to Grade 2. Recognizing my potential, I transitioned to <strong>LightHouse School</strong> for Grades 3 to 5, where my performance stood out, and I skipped a grade due to my exceptional academic aptitude.</p>
+                    </div>
+
+                    <div class="sub-section">
+                        <h2>Junior School</h2>
+                        <p>In 2016, I began my high school education at <strong>New Covenant School</strong>, completing Grades 7 through 9 by 2018. My dedication and hard work paid off when I graduated from Junior School as the <strong>best student</strong>, earning the privilege to join one of the most prestigious academic environments in The Gambia—<strong>Nusrat Senior Secondary School</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="sub-sections">
+                    <div class="sub-section">
+                        <h2>High School</h2>
+                        <p>At Nusrat, I joined the esteemed <strong>Science 1 class</strong>, where I completed Grades 10 to 12. In 2021, I graduated high school from Nusrat with <strong>strong grades</strong>, making me a strong candidate for competitive scholarship applications. This milestone set the stage for my higher education journey.</p>
+                    </div>
+
+                    <div class="sub-section">
+                        <h2>University</h2>
+                        <p>In 2022, I commenced my university studies at the <strong>University of The Gambia (UTG)</strong> as a Computer Science student. Later that year, I was fortunate to secure a scholarship to pursue my education at <strong>ENSAF</strong> (École Nationale des Sciences Appliquées de Fès) one of the most competitive schools in <strong>Morocco</strong>. Despite arriving late in the academic cycle and now having lectures in French, I managed to successfully validate the preparatory stages, showcasing my resilience and adaptability. Today, I am specializing in <strong>Data Science and AI Engineering</strong>, aligning perfectly with my career aspirations.</p>
+                    </div>
+                </div>
+
+                <div class="separator-line"></div>
+
+                <h2>Vision for the Future</h2>
+                <p>My ultimate goal is to excel in the field of Data Science and AI Engineering, leveraging my expertise to help companies make <strong>data-driven decisions and future predictions</strong>. I am committed to becoming a sought-after professional in this domain. I aspire to graduate in 2027 with a <strong>Master’s degree (Bac+5)</strong>, ready to make meaningful contributions to the world of technology and innovation.</p>
+
+                <p>This journey reflects my unwavering determination and passion for education, and I look forward to the impact I will create in the tech industry.</p>
+            </div>
+        </div>
+
+        <div class="separator-line"></div>
+
+        <div class="next-page-container">
+            <a href="skills.html" class="next-page-btn">Next Page</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Muhammed John | Data Science & AI Engineering</p>
+    </footer>
+
+    <script>
+        // Sidebar toggle functionality for mobile and tablets
+        const hamburger = document.querySelector(".hamburger");
+        const sidebar = document.querySelector(".sidebar");
+
+        hamburger.addEventListener("click", () => {
+            sidebar.classList.toggle("active"); // Toggle visibility
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+                sidebar.classList.remove("active");
+            }
+        });
+    </script>
+</body>
+</html>

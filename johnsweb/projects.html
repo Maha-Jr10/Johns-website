@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Muhammed John</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e1e2f, #3c3c54);
+            color: #fff;
+        }
+
+        /* Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+        .nav-links a.active {
+            background: #1b5f5f;
+            color: black;
+        }
+
+        .nav-links a:hover {
+            background: #00cec9;
+            color: #000;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -200px; /* Start off-screen */
+            width: 200px; /* Reduced width */
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            transition: left 0.3s ease;
+            z-index: 1001;
+            padding: 2rem 1rem;
+            display: none; /* Initially hidden */
+        }
+
+        .sidebar.active {
+            left: 0;
+            display: block; /* Show when active */
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 0;
+            font-weight: bold;
+            border-bottom: 1px solid #444;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: #00cec9;
+            color: #000;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 2rem;
+            color: #fff;
+            z-index: 1002;
+        }
+
+        /* Empty Section Styling */
+        .empty-section {
+            background: rgba(0, 0, 0, 0.7);
+            margin: 2rem auto;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            animation: fadeIn 2s ease;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .empty-section h2 {
+            font-size: 2rem;
+            color: #ffcc00;
+            margin-bottom: 1rem;
+        }
+
+        .empty-section .message {
+            font-size: 1.2rem;
+            color: #f1f1f1;
+            font-style: italic;
+        }
+
+        .empty-section::before {
+            content: "🚧";
+            font-size: 3rem;
+            display: block;
+            margin: 1rem auto;
+            animation: shake 1s infinite;
+        }
+
+        .next-page-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: #00cec9;
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .next-page-btn:hover {
+            background: #00b894;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(-10px); }
+            25% { transform: translateX(10px); }
+            50% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Media Queries */
+        @media only screen and (max-width: 1024px) {
+            /* Navbar */
+            .navbar {
+                padding: 0.8rem 1.5rem; /* Adjusted padding */
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .logo {
+                font-size: 0.8rem; /* Reduced font size */
+            }
+
+            .sidebar a {
+                width: 100%;
+                padding: 0.8rem 1.5rem; /* Adjusted padding */
+                text-align: left;
+                font-size: 0.9rem; /* Reduced sidebar link size */
+            }
+
+            .sidebar a.active {
+                background: #1b5f5f;
+                color: black;
+            }
+
+
+            /* Empty Section */
+            .empty-section {
+                padding: 2rem 1rem; /* Reduced padding */
+                width: 95%; /* Adjusted width */
+            }
+
+            .empty-section h2 {
+                font-size: 1.5rem; /* Reduced heading size */
+            }
+
+            .empty-section .message {
+                font-size: 1rem; /* Reduced message font size */
+            }
+
+            /* Footer */
+            footer {
+                font-size: 0.9rem; /* Reduced footer text size */
+            }
+
+            .next-page-btn {
+                font-size: 1.1rem; /* Reduced button text size */
+                padding: 0.55rem 1rem; /* Adjusted padding */
+            }
+        }
+
+        /* For very small devices (mobile phones) */
+        @media only screen and (max-width: 640px) {
+            /* Navbar */
+            .logo {
+                font-size: 0.8rem; /* Further reduced logo font size */
+            }
+
+            .sidebar a {
+                font-size: 0.8rem; /* Smaller sidebar links */
+                padding: 0.6rem 1rem; /* Adjusted padding */
+            }
+
+            /* Empty Section */
+            .empty-section {
+                padding: 1.5rem 1rem; /* Further reduced padding */
+            }
+
+            .empty-section h2 {
+                font-size: 1.2rem; /* Smaller heading size */
+            }
+
+            .empty-section .message {
+                font-size: 0.9rem; /* Smaller message text */
+            }
+
+            .next-page-btn {
+                font-size: 0.9rem; /* Smaller button font size */
+                padding: 0.6rem 1rem; /* Adjusted padding */
+            }
+
+            /* Footer */
+            footer {
+                font-size: 0.8rem; /* Smaller footer text size */
+            }
+        }
+
+    </style>
+
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">💡 The John Archive</div>
+            <div class="hamburger">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <section class="empty-section">
+        <h2>🚧 Under Construction 🚧</h2>
+        <p class="message">Please check back later!</p>
+        <a href="certificates.html" class="next-page-btn">Next Page</a>
+    </section>
+
+    <footer>
+        <p>© 2025 Muhammed John | Data Science & AI Engineering</p>
+    </footer>
+
+    <script>
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector(".hamburger");
+        const sidebar = document.querySelector(".sidebar");
+
+        hamburger.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+                sidebar.classList.remove("active");
+            }
+        });
+    </script>
+</body>
+</html>
