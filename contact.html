@@ -507,7 +507,7 @@
                 <a href="https://www.kaggle.com/muhammedjohn" target="_blank" class="social-link kaggle"><i class="fab fa-kaggle"></i> aggle</a>
                 <a href="https://www.hackerrank.com/Muhammedjohn3" target="_blank" class="social-link hackerrank"><i class="fab fa-hackerrank"></i> ackerRank</a>
                 <a href="https://www.instagram.com/_maha_jr_" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i> Instagram</a>
-                <a href="https://wa.me/+212647466338" target="_blank" class="social-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://wa.me/+212697882357" target="_blank" class="social-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                 <a href="mailto:muhammedjohnappleid@gmail.com" class="social-link email"><i class="fas fa-envelope"></i> Email</a>
             </div>
 
@@ -585,6 +585,12 @@
             sidebar.classList.toggle("active");
         });
 
+        // Close sidebar when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+                sidebar.classList.remove("active");
+            }
+        });
     </script>
 </body>
 </html>

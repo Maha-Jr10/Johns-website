@@ -354,8 +354,28 @@
                 padding: 0.55rem 1rem; /* Adjusted padding */
             }
 
+            
+            .download-btn {
+                font-size: 0.8rem; /* Reduced from 1rem */
+            }
+
         }
 
+        .download-btn {
+            display: inline-block;
+            background: #00cec9;
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: #00b894;
+        }
     </style>
     <style>
         /* Existing styles above... */
@@ -411,6 +431,10 @@
             footer {
                 font-size: 0.8rem; /* Smaller footer text size */
             }
+            
+            .download-btn {
+                font-size: 0.8rem; /* Reduced from 1rem */
+            }
         }
     </style>
     
@@ -447,6 +471,31 @@
         <h1>My Certificates</h1>
         <p>Click on a certificate to view it:</p>
         <div class="certificate-grid">
+            <div class="certificate-card" data-certificate="certificates/DataCamp/Generative AI Concepts.png">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h2>Generative AI Concepts</h2>
+                <p>DataCamp</p>
+            </div>
+            <div class="certificate-card" data-certificate="certificates/DataCamp/Introduction to Data Literacy.png">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h2>Introduction to Data Literacy</h2>
+                <p>DataCamp</p>
+            </div>
+            <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Intermediate Machine Learning.png">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h2>Intermediate Machine Learning</h2>
+                <p>Kaggle</p>
+            </div>
+            <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Feature Engineering.png">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h2>Feature Engineering</h2>
+                <p>Kaggle</p>
+            </div>
+            <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Data Cleaning.png">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h2>Data Cleaning</h2>
+                <p>Kaggle</p>
+            </div>
             <div class="certificate-card" data-certificate="certificates/Oracle Certs/DD CC.png, certificates/Oracle Certs/DD EC.png">
                 <span class="count-badge" title="Number of certificates in this category">2</span>
                 <h2>Database Design</h2>
@@ -500,10 +549,13 @@
                 <h2>5-Star SQL Badge</h2>
                 <p>HackerRank Achievement</p>
             </div>
+            
+            <!-- CV Download Section -->
             <div class="achievement-card" data-document="CV.pdf">
-                <span class="count-badge" title="Number of achievement(s)/document(s) in this category">1</span>
-                <h2>MY CV</h2>
-                <p>Professional Document</p>
+                <span class="count-badge" title="Download my CV">1</span>
+                <h2>My CV</h2>
+                <p>Professional CV</p>
+                <a href="path/to/your/CV.pdf" download="Muhammed_John_CV.pdf" class="download-btn">Download CV</a>
             </div> 
         </div>
 
@@ -592,6 +644,13 @@
 
         hamburger.addEventListener("click", () => {
             sidebar.classList.toggle("active");
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+                sidebar.classList.remove("active");
+            }
         });
     </script>
 </body>
