@@ -122,39 +122,102 @@
         }
 
         .social-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 1.5rem;
-            justify-items: center;
+            display: flex;
+            justify-content: space-between;
             margin-top: 3rem;
+            padding-left: 5rem;
+            padding-right: 5rem;
         }
+
+        /* Social Links – Unified Radial Gradients */
+        .social-link.linkedin {
+        background: radial-gradient(
+            circle at 30% 107%,
+            #833ab4 0%,
+            #5851db 25%,
+            #405de6 50%,
+            #fd1d1d 75%,
+            #fcb045 100%
+        );
+        }
+
+        .social-link.github {
+        background: radial-gradient(
+            circle at 30% 107%,
+            #833ab4 0%,
+            #5851db 25%,
+            #405de6 50%,
+            #fd1d1d 75%,
+            #fcb045 100%
+        );
+        }
+
+        .social-link.kaggle {
+        background: radial-gradient(
+            circle at 30% 107%,
+            #833ab4 0%,
+            #5851db 25%,
+            #405de6 50%,
+            #fd1d1d 75%,
+            #fcb045 100%
+        );
+        }
+
+        .social-link.hackerrank {
+        background: radial-gradient(
+            circle at 30% 107%,
+            #833ab4 0%,
+            #5851db 25%,
+            #405de6 50%,
+            #fd1d1d 75%,
+            #fcb045 100%
+        );
+        }
+
+        .social-link.instagram {
+        /* Your existing muted IG gradient */
+        background: radial-gradient(
+            circle at 30% 107%,
+            #833ab4 0%,
+            #5851db 25%,
+            #405de6 50%,
+            #fd1d1d 75%,
+            #fcb045 100%
+        );
+        }
+
+        .social-link.whatsapp {
+        background: radial-gradient(
+            circle at 30% 107%,
+            #833ab4 0%,
+            #5851db 25%,
+            #405de6 50%,
+            #fd1d1d 75%,
+            #fcb045 100%
+        );
+        }
+
+        .social-link.email {
+        background: radial-gradient(
+            circle at 30% 107%,
+            #833ab4 0%,
+            #5851db 25%,
+            #405de6 50%,
+            #fd1d1d 75%,
+            #fcb045 100%
+        );
+        }
+
 
         .social-link {
-            padding: 1rem 2rem;
+            width: 60px;   /* Square */
+            height: 60px;
             border-radius: 50%;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100px;
-            height: 100px;
-            transition: transform 0.3s ease, background 0.3s ease;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            font-size: 1.2rem;
+            line-height: 60px;
         }
-
-        .social-link.linkedin { background-color: #0077b5; }
-        .social-link.github { background-color: #24292f; }
-        .social-link.kaggle { background-color: #20beff; }
-        .social-link.instagram { background-color: #e4405f; }
-        .social-link.whatsapp { background-color: #25d366; }
-        .social-link.email { background-color: #f39c12; }
-        .social-link.hackerrank { background-color: #2EC866; }
-
         .social-link i {
-            font-size: 1.5rem;
-            color: #fff;
+            vertical-align: middle;
         }
 
         .social-link:hover {
@@ -334,10 +397,26 @@
                 font-size: 0.9rem; /* Reduced footer font size */
             }
 
+
             .social-link {
-                width: 80px;
-                height: 65px;
-                padding: 0.7rem 1.7rem;
+                width: 40px;   /* Square */
+                height: 40px;
+                border-radius: 50%;
+                font-size: 0.9rem;
+                line-height: 40px;
+            }
+            .social-link i {
+                vertical-align: middle;
+            }
+
+            .social-links {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                /*overflow-x: auto;               /* Allow horizontal scroll if needed */
+            }
+
+            .social-links::-webkit-scrollbar {
+                display: none;
             }
 
             /* Reduce font sizes for smaller screens */
@@ -347,15 +426,6 @@
 
             .contact-section p {
                 font-size: 1rem;
-            }
-
-            .social-link {
-                font-size: 1.2rem;
-                padding: 0.8rem 1.5rem;
-            }
-
-            .social-link i {
-                font-size: 1.2rem;
             }
 
             h3 {
@@ -402,28 +472,12 @@
                 padding: 0.6rem 1rem; /* Adjusted padding */
             }
 
-
-            .social-link {
-                width: 70px;
-                height: 45px;
-                padding: 0.5rem 1.4rem;
-            }
-
             .contact-section h2 {
                 font-size: 1.6rem;
             }
 
             .contact-section p {
                 font-size: 0.9rem;
-            }
-
-            .social-link {
-                font-size: 1rem;
-                padding: 0.7rem 1.3rem;
-            }
-
-            .social-link i {
-                font-size: 1.rem;
             }
 
             h3 {
@@ -497,47 +551,61 @@
     </div>
 
     <section id="contact" class="contact-section">
-        <div class="section-content">
-            <h2>Contact Me</h2>
-            <p>If you'd like to get in touch, feel free to connect with me on any of the platforms below:</p>
+    <div class="section-content">
+        <h2>Get in Touch</h2>
+        <p>If you’re interested in discussing potential opportunities, collaborations, or simply want to connect, feel free to reach out through any of the platforms below:</p>
 
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/Maha-Jr" target="_blank" class="social-link linkedin">Linked <i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Maha-Jr10" target="_blank" class="social-link github"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://www.kaggle.com/muhammedjohn" target="_blank" class="social-link kaggle"><i class="fab fa-kaggle"></i> aggle</a>
-                <a href="https://www.hackerrank.com/Muhammedjohn3" target="_blank" class="social-link hackerrank"><i class="fab fa-hackerrank"></i> ackerRank</a>
-                <a href="https://www.instagram.com/_maha_jr_" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i> Instagram</a>
-                <a href="https://wa.me/+212647466338" target="_blank" class="social-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                <a href="mailto:muhammedjohnappleid@gmail.com" class="social-link email"><i class="fas fa-envelope"></i> Email</a>
-            </div>
-
-            <hr>
-
-            <h3>What's your take on this?</h3>
-            <p>I would love to hear your thoughts! Please fill out the form below:</p>
-
-            <form name="submit-to-google-sheet" id="comment-form">
-                <div class="name-surname-container">
-                    <input type="text" id="name" name="name" class="inline" placeholder="Enter your name" required>
-                    <input type="text" id="surname" name="surname" class="inline" placeholder="Enter your surname" required>
-                </div>
-                <textarea id="comment" name="comment" rows="4" placeholder="Enter your comment here..." required></textarea>
-                <button type="submit" class="cta">Send</button>
-            </form>            
-
-            <div id="msg"></div>
-            
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/Maha-Jr" target="_blank" class="social-link linkedin">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Maha-Jr10" target="_blank" class="social-link github">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.kaggle.com/muhammedjohn" target="_blank" class="social-link kaggle">
+                <i class="fab fa-kaggle"></i>
+            </a>
+            <a href="https://www.hackerrank.com/Muhammedjohn3" target="_blank" class="social-link hackerrank">
+                <i class="fab fa-hackerrank"></i>
+            </a>
+            <a href="https://www.instagram.com/_maha_jr_" target="_blank" class="social-link instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/+212647466338" target="_blank" class="social-link whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:muhammedjohnappleid@gmail.com" class="social-link email">
+                <i class="fas fa-envelope"></i>
+            </a>
         </div>
+
+        <hr>
+
+        <h3>Send a Message</h3>
+        <p>I welcome your feedback, questions, or ideas. Please use the form below to get in touch directly:</p>
+
+        <form name="submit-to-google-sheet" id="comment-form">
+            <div class="name-surname-container">
+                <input type="text" id="name" name="name" class="inline" placeholder="First Name" required>
+                <input type="text" id="surname" name="surname" class="inline" placeholder="Last Name" required>
+            </div>
+            <textarea id="comment" name="comment" rows="4" placeholder="Your message..." required></textarea>
+            <button type="submit" class="cta">Submit</button>
+        </form>
+
+        <div id="msg"></div>
+    </div>
     </section>
 
     <section class="contact-details">
         <p>Email: <a href="mailto:muhammedjohn3@gmail.com">muhammedjohn3@gmail.com</a></p>
         <p>Phone: <a href="tel:+212647466338">+212 647 46 63 38</a></p>
     </section>
-      
+
     <div class="back-home-container">
-        <a href="index.html" class="back-home-btn">Back to Home</a>
+        <a href="index.html" class="back-home-btn">Return to Homepage</a>
     </div>
+
 
     <footer>
         <p>© 2025 Muhammed John | Data Science & AI Engineering</p>
