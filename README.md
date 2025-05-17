@@ -82,9 +82,12 @@ This portfolio was built to:
 │
 ├── shared.css # Shared styles across pages
 ├── shared.js # Shared scripts
-├── images/ # Project-specific images
-├── images
-├── images
+│
+├── Project_images/ # Project-specific images
+├── images/ # About images
+├── PDFs/ # contains CV and 5-star SQL Badge
+├── certificates/ # contains all certificates
+│
 └── README.md # Project documentation (This file)
 
 ```
