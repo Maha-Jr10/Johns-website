@@ -9,8 +9,7 @@ Welcome to the source code of **The John Archive**, my personal portfolio design
 
 ## 🔗 Live Site
 
-📍 **View the Portfolio:** [https://your-username.github.io/your-repo-name](https://your-username.github.io/your-repo-name)  
-*(Replace with your actual GitHub Pages link)*
+📍 **View the Portfolio:** https://maha-jr10.github.io/Johns-website
 
 ---
 
@@ -22,8 +21,6 @@ This portfolio was built to:
 - Present my **data and AI projects** with clarity
 - Provide an organized and professional overview of my **education, skills, and certifications**
 - Serve as a **personal knowledge archive**
-
-All sections are now fully functional — including the `Projects` page which was previously under construction.
 
 ---
 
@@ -46,7 +43,7 @@ All sections are now fully functional — including the `Projects` page which wa
   - **Skills**
   - **Projects**
   - **Certificates**
-  - **Contact Form**
+  - **Contact**
 - Typewriter animation on landing page
 - Custom color scheme and branding
 
@@ -55,17 +52,41 @@ All sections are now fully functional — including the `Projects` page which wa
 ## 🧩 Repository Structure
 
 ```
-├── index.html             # Main landing page
-├── about.html             # About section
-├── education.html         # Education details
-├── skills.html            # Technical skills
-├── projects.html          # Portfolio of projects
-├── certificates.html      # Certification showcase
-├── contact.html           # Contact form
-├── /css                   # Stylesheets
-│   └── style.css
-├── /images                # Profile & project images
-└── README.md              # Project documentation
+├── index.html # Home page
+├── index.css
+├── index.js
+│
+├── about.html # “About Me” section
+├── about.css
+├── about.js
+│
+├── skills.html # Skills section
+├── skills.css
+├── skills.js
+│
+├── projects.html # Projects section
+├── projects.css
+├── projects.js
+│
+├── education.html # Education section
+├── education.css
+├── education.js
+│
+├── certificates.html # Certificates section
+├── certificates.css
+├── certificates.js
+│
+├── contact.html # Contact section
+├── contact.css
+├── contact.js
+│
+├── shared.css # Shared styles across pages
+├── shared.js # Shared scripts
+├── images/ # Project-specific images
+├── images
+├── images
+└── README.md # Project documentation (This file)
+
 ```
 
 ---
