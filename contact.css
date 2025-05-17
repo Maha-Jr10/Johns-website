@@ -1,0 +1,306 @@
+.contact-section {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #00cec9;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+/* Social Links – Unified Radial Gradients */
+.social-link.linkedin {
+background: radial-gradient(
+    circle at 30% 107%,
+    #833ab4 0%,
+    #5851db 25%,
+    #405de6 50%,
+    #fd1d1d 75%,
+    #fcb045 100%
+);
+}
+
+.social-link.github {
+background: radial-gradient(
+    circle at 30% 107%,
+    #833ab4 0%,
+    #5851db 25%,
+    #405de6 50%,
+    #fd1d1d 75%,
+    #fcb045 100%
+);
+}
+
+.social-link.kaggle {
+background: radial-gradient(
+    circle at 30% 107%,
+    #833ab4 0%,
+    #5851db 25%,
+    #405de6 50%,
+    #fd1d1d 75%,
+    #fcb045 100%
+);
+}
+
+.social-link.hackerrank {
+background: radial-gradient(
+    circle at 30% 107%,
+    #833ab4 0%,
+    #5851db 25%,
+    #405de6 50%,
+    #fd1d1d 75%,
+    #fcb045 100%
+);
+}
+
+.social-link.instagram {
+background: radial-gradient(
+    circle at 30% 107%,
+    #833ab4 0%,
+    #5851db 25%,
+    #405de6 50%,
+    #fd1d1d 75%,
+    #fcb045 100%
+);
+}
+
+.social-link.whatsapp {
+background: radial-gradient(
+    circle at 30% 107%,
+    #833ab4 0%,
+    #5851db 25%,
+    #405de6 50%,
+    #fd1d1d 75%,
+    #fcb045 100%
+);
+}
+
+.social-link.email {
+background: radial-gradient(
+    circle at 30% 107%,
+    #833ab4 0%,
+    #5851db 25%,
+    #405de6 50%,
+    #fd1d1d 75%,
+    #fcb045 100%
+);
+}
+
+
+.social-link {
+    width: 60px;   /* Square */
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    line-height: 60px;
+}
+.social-link i {
+    vertical-align: middle;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background: #00cec9;
+    margin: 3rem 0;
+}
+
+h3 {
+    color:  #00cec9;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+form {
+    margin-top: 2rem;
+}
+
+input, textarea {
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    background: #f9f9f9;
+    color: #333;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.name-surname-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+input.inline {
+    width: 48%;
+}
+
+textarea {
+    width: 95%;
+    resize: none;
+}
+
+button.cta {
+    background: #00cec9;
+    color: #000;
+    padding: 0.6rem 1.3rem;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+button.cta:hover, .back-home-btn:hover {
+    background: #00b894;
+}
+
+#msg {
+    background-color: greenyellow;
+    padding: 0.4rem;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    margin-top: 1rem;
+    display: none;
+}
+
+/* Contact Details Styling */
+.contact-details {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-details p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-details a {
+    color: #00cec9;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.contact-details a:hover {
+    color: #00b894;
+}
+
+@media only screen and (max-width: 1024px) {
+    .social-link {
+        width: 40px;   
+        height: 40px;
+        border-radius: 50%;
+        font-size: 0.9rem;
+        line-height: 40px;
+    }
+
+    .social-link i {
+        vertical-align: middle;
+    }
+
+    .social-links {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        /*overflow-x: auto;               /* Allow horizontal scroll if needed */
+    }
+
+    .social-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .contact-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-section p {
+        font-size: 1rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    input, textarea {
+        font-size: 0.9rem;
+    }
+
+    .contact-details p {
+        font-size: 1rem;
+    }
+
+    .comment-form .cta {
+        font-size: 0.9rem; 
+        padding: 0.4rem 0.8rem; 
+    }
+
+    button.cta {
+        padding: 0.4rem 1.2rem;
+    }
+
+    #msg {
+        font-size: 0.7rem;
+    }
+
+}
+
+/* For very small devices (mobile phones) */
+@media only screen and (max-width: 640px) {
+    .contact-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .contact-section p {
+        font-size: 0.9rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .name-surname-container {
+        display: block;
+    }
+
+    input.inline {
+        width: 95%;
+    }
+
+    input, textarea {
+        font-size: 0.8rem;
+    }
+
+    .contact-details p {
+        font-size: 0.9rem;
+    }
+}

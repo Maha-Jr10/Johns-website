@@ -1,0 +1,235 @@
+.certificate-section,
+.achievement-section {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.certificate-section h1,
+.achievement-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #00cec9;
+}
+
+.certificate-grid,
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.certificate-card,
+.achievement-card {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.certificate-card:hover,
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.certificate-card h2,
+.achievement-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #00cec9;
+}
+
+.certificate-card p,
+.achievement-card p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+/* Count Badge */
+.count-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #00cec9;
+    color: #000;
+    border-radius: 50%;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: pop-in 0.5s ease;
+}
+
+/* Tooltip Styling */
+.count-badge:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -30px;
+    left: -50%;
+    transform: translateX(-80%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    animation: tooltip-fade-in 0.3s forwards;
+}
+
+
+@keyframes tooltip-fade-in {
+    0% {
+        opacity: 0;
+        top: -40px;
+    }
+    100% {
+        opacity: 1;
+        top: -30px;
+    }
+}
+
+@keyframes pop-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 80%;
+    max-height: 90%;
+    overflow: auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal img {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    max-width: 500px;
+    margin-bottom: 10px;
+}
+
+.modal img.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal img + img {
+    margin-top: 10px;
+}
+
+.modal-close {
+    background: #e74c3c;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.modal-close:hover {
+    background: #c0392b;
+}
+
+.download-btn {
+    display: inline-block;
+    background: #00cec9;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background: #00b894;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    /* Reduce font sizes for smaller screens */
+    .certificate-section h1,
+    .achievement-section h1 {
+        font-size: 1.8rem; /* Adjusted from 2.5rem */
+    }
+
+    .certificate-card h2,
+    .achievement-card h2 {
+        font-size: 1.2rem; /* Adjusted from 1.5rem */
+    }
+
+    .certificate-card p,
+    .achievement-card p {
+        font-size: 0.9rem; /* Adjusted from 1rem */
+    }
+
+
+    .count-badge {
+        font-size: 1rem; /* Adjusted from 1.2rem */
+    }
+
+    
+    .download-btn {
+        font-size: 0.8rem; /* Reduced from 1rem */
+    }
+
+}
+
+
+@media only screen and (max-width: 640px) {
+    /* Adjust font sizes for mobile screens */
+    .certificate-section h1,
+    .achievement-section h1 {
+        font-size: 1.4rem; /* Adjusted from 2.5rem */
+    }
+
+    .certificate-card h2,
+    .achievement-card h2 {
+        font-size: 1.1rem; /* Adjusted from 1.5rem */
+    }
+
+    .certificate-card p,
+    .achievement-card p {
+        font-size: 0.8rem; /* Adjusted from 1rem */
+    }
+
+    .count-badge {
+        font-size: 0.9rem; /* Adjusted from 1.2rem */
+    }
+    
+    .download-btn {
+        font-size: 0.8rem; /* Reduced from 1rem */
+    }
+}

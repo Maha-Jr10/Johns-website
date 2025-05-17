@@ -1,0 +1,110 @@
+.education-section {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.education-content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.education-text {
+    text-align: left;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #4e97d4;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: #00cec9;
+}
+
+strong{
+    color: #00cec9;
+}
+
+.education-text p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+/* Grid Layout for Sub-sections */
+.sub-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column grid */
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.sub-section {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.sub-section h2 {
+    margin-top: 0;
+}
+
+.sub-section p {
+    margin-top: 1rem;
+}
+
+.separator-line {
+    margin-top: 2rem;
+    border-top: 2px solid #4e97d4;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .education-section {
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Reduced from 3rem */
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Reduced from 2rem */
+    }
+
+    .education-text p,
+    .sub-section p {
+        font-size: 1rem; /* Reduced from 1.1rem */
+    }
+
+    .sub-sections {
+        grid-template-columns: 1fr 1fr; /* Display sub-sections in 2 columns on tablets */
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    h1 {
+        font-size: 2rem; /* Further reduced for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Further reduced */
+    }
+
+    .education-text p,
+    .sub-section p {
+        font-size: 0.9rem; /* Further reduced */
+    }
+
+    .sub-sections {
+        grid-template-columns: 1fr; /* Display sub-sections in 1 column on mobile */
+    }
+}

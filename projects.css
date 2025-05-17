@@ -1,0 +1,103 @@
+.projects-section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.projects-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #00cec9;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+.project-card {
+    background: rgba(0,0,0,0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+}
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.project-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.project-content h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    color: #00cec9;
+}
+.project-content p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+.project-content a {
+    margin-top: auto;
+    align-self: center;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #00cec9;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.project-content a:hover {
+    background: #00b894;
+}
+
+
+
+/* Mobile – up to 640px */
+@media only screen and (max-width: 640px) {
+    /* Projects section padding & title */
+    .projects-section {
+    padding: 1rem;
+    }
+    .projects-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    }
+
+    /* Stack cards in one column */
+    .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    }
+
+    .project-card img {
+    height: 140px;
+    }
+    .project-content {
+    padding: 0.75rem;
+    }
+    .project-content h3 {
+    font-size: 1.1rem;
+    }
+    .project-content p {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+    }
+    .project-content a {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    }
+
+}

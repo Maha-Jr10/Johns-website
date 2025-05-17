@@ -1,0 +1,215 @@
+.about-section {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    color: #fff;
+    animation: fadeInUp 1s ease-out;
+}
+
+.about-content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.profile-container {
+    flex: 1;
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+}
+
+.profile-pic {
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    border: 3px solid #00cec9;
+    border-radius: 10px;
+}
+
+.about-text {
+    flex: 2;
+    text-align: left;
+}
+
+.about-text a {
+    color: #00bfff; /* Bright sky blue */
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.about-text a:hover {
+    color: #1e90ff; /* Slightly lighter blue on hover */
+    text-decoration: none;
+}
+
+strong {
+    color: #00cec9;
+}
+
+.about-text h1 {
+    font-size: 2.5rem;
+    color: #00cec9;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.separator-line {
+    margin-top: 2rem;
+    border-top: 2px solid #00cec9;
+    width: 100%;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: #00cec9;
+}
+
+/* Hobby Images */
+.hobby-images {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.hobby-images img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Zoom Effect on Hover */
+.hobby-images img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Hobby Labels - position below the images */
+.hobby-labels {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #fff;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hobby-labels div {
+    text-align: center;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Mobile and Tablet */
+@media (max-width: 1024px) {
+    .about-content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .about-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .profile-container {
+        margin-right: 0;
+    }
+
+    .profile-pic {
+        width: 250px;
+        height: 250px;
+        object-fit: contain;
+    }
+
+    .hobby-labels div {
+        font-size: 0.85rem;
+    }
+
+    .hob {
+        text-align: center;
+    }
+
+    .hobby-images {
+        justify-content: center;
+    }
+
+    .hobby-images img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hobby-labels {
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .separator-line {
+        margin-top: 1rem;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .about-text p {
+        font-size: 0.8rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .hobby-images img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .hobby-labels div {
+        font-size: 0.75rem;
+    }
+}
