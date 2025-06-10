@@ -419,7 +419,15 @@
     .profile-summary h1 {
         font-size: 1.3rem !important;
         margin-bottom: 0.3rem !important;
+        flex-direction: column;
+        gap: 0.2rem;
     }
+
+    .profile-summary h1 i {
+        display: block;
+        margin-bottom: 0.3rem;
+    }
+
     .profile-summary .headline {
         font-size: 1rem !important;
         margin-bottom: 0.2rem !important;
