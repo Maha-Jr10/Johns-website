@@ -2,8 +2,12 @@ const modal = document.getElementById('certificate-modal');
 const modalImagesContainer = document.getElementById('modal-images-container');
 const closeModalButton = document.querySelector('.modal-close');
 
+// Certificate cards (image modal)
 document.querySelectorAll('.certificate-card').forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
+        // Prevent modal if a link was clicked
+        if (e.target.closest('a')) return;
+
         const certificateSrc = card.getAttribute('data-certificate');
         const srcArray = certificateSrc.split(',');
 
@@ -25,19 +29,29 @@ document.querySelectorAll('.certificate-card').forEach(card => {
     });
 });
 
+// Achievement cards (PDF modal, support for multiple CVs)
 document.querySelectorAll('.achievement-card').forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
+        // Prevent modal if a link was clicked
+        if (e.target.closest('a')) return;
+
         const documentSrc = card.getAttribute('data-document');
-        
-        // Create an iframe for PDF or other document viewing
-        const iframe = document.createElement('iframe');
-        iframe.src = documentSrc;
-        iframe.style.width = '100%';
-        iframe.style.height = '80vh';
-        iframe.frameBorder = '0';
-        
+        // If multiple documents (comma separated), show all as iframes
+        const srcArray = documentSrc.split(',');
+
         modalImagesContainer.innerHTML = '';
-        modalImagesContainer.appendChild(iframe);
+
+        srcArray.forEach(src => {
+            const trimmedSrc = src.trim();
+            if (trimmedSrc.toLowerCase().endsWith('.pdf')) {
+                const iframe = document.createElement('iframe');
+                iframe.src = trimmedSrc;
+                iframe.style.width = '100%';
+                iframe.style.height = '80vh';
+                iframe.frameBorder = '0';
+                modalImagesContainer.appendChild(iframe);
+            }
+        });
 
         modal.style.display = 'flex';
     });
@@ -55,4 +69,25 @@ modal.addEventListener('click', (e) => {
         const images = modal.querySelectorAll('img');
         images.forEach(img => img.classList.remove('show'));
     }
+});
+
+document.getElementById('cert-filter').addEventListener('change', function () {
+    const value = this.value;
+    document.querySelectorAll('.certificate-card').forEach(card => {
+        let show = false;
+        if (value === 'all') {
+            show = true;
+        } else if (value === 'kaggle' && card.innerHTML.toLowerCase().includes('kaggle')) {
+            show = true;
+        } else if (value === 'hackerrank' && card.innerHTML.toLowerCase().includes('hackerrank')) {
+            show = true;
+        } else if (value === 'oracle' && card.innerHTML.toLowerCase().includes('oracle')) {
+            show = true;
+        } else if (value === 'freecodecamp' && card.innerHTML.toLowerCase().includes('freecodecamp')) {
+            show = true;
+        } else if (value === 'datacamp' && card.innerHTML.toLowerCase().includes('datacamp')) {
+            show = true;
+        }
+        card.style.display = show ? '' : 'none';
+    });
 });

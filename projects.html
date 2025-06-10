@@ -9,41 +9,67 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-        <div class="logo">💡 The John Archive</div>
-        <div class="hamburger">&#9776;</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="projects.html" class="active">Projects</a></li>
-            <li><a href="certificates.html">Certificates</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <nav class="navbar" aria-label="Main navigation">
+            <div class="logo" aria-label="Site logo">💡 The John Archive</div>
+            <div class="hamburger" aria-label="Open navigation menu" tabindex="0">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <div class="sidebar">
+    <aside class="sidebar" aria-label="Sidebar navigation">
         <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
+        <a href="about.html">About</a>
         <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
         <a href="skills.html">Skills</a>
-        <a href="projects.html" class="active">Projects</a>
+        <a href="projects.html" class="active" aria-current="page">Projects</a>
         <a href="certificates.html">Certificates</a>
         <a href="contact.html">Contact</a>
-    </div>
+    </aside>
 
-    <section class="projects-section">
-            <h2>My Projects</h2>
+    <main>
+        <section class="projects-section">
+            <h1>Highlighted Projects</h1>
+            <p class="projects-intro">
+                Explore a curated selection of my data science, machine learning, and software engineering projects. Each project demonstrates technical depth, practical problem-solving, and a focus on real-world impact.
+            </p>
             <div class="projects-grid">
+                <!-- Customer Churn Prediction -->
+                <div class="project-card">
+                    <img src="Project_images/customer_churn_prediction.png" alt="Customer Churn Prediction">
+                    <div class="project-content">
+                        <h3>Customer Churn Prediction</h3>
+                        <p>End-to-end Customer Churn Prediction System powered by a deep learning model (ANN) and wrapped it in a clean and interactive Streamlit web app—designed to be simple even for non-technical users.</p>
+                        <a href="https://github.com/Maha-Jr10/Customer-Churn-Prediction" target="_blank" rel="noopener">GitHub Link</a>
+                    </div>
+                </div>
+                <!-- Dockerized FastAPI Iris Predictor -->
+                <div class="project-card">
+                    <img src="Project_images/iris-api.png" alt="Dockerized FastAPI Iris Predictor">
+                    <div class="project-content">
+                        <h3>Dockerized FastAPI Iris Predictor</h3>
+                        <p>
+                            Built a production-ready backend service using FastAPI and Docker to predict Iris flower species from user input.<br>
+                        </p>
+                        <a href="https://github.com/Maha-Jr10/Iris-API" target="_blank" rel="noopener">GitHub Link</a>
+                    </div>
+                </div>
                 <!-- House Price Prediction -->
                 <div class="project-card">
                     <img src="Project_images/House price prediction.png" alt="House Price Prediction">
                     <div class="project-content">
                         <h3>House Price Prediction</h3>
                         <p>End-to-end ML pipeline: feature engineering on Bangalore real-estate data, model training (Decision Tree, Lasso, Linear Regression), hyperparameter tuning, and Flask API deployment.</p>
-                        <a href="https://github.com/Maha-Jr10/House-price-prediction-project" target="_blank">GitHub Link</a>
+                        <a href="https://github.com/Maha-Jr10/House-price-prediction-project" target="_blank" rel="noopener">GitHub Link</a>
                     </div>
                 </div>
                 <!-- Road Accident Dashboard -->
@@ -52,7 +78,7 @@
                     <div class="project-content">
                         <h3>Road Accident Dashboard</h3>
                         <p>Interactive Excel dashboard transforming 307K+ UK collision records into KPIs, trend analyses, and dynamic charts for data-driven road safety decisions.</p>
-                        <a href="https://1drv.ms/x/c/9e426d7bd2b44799/EakpZlSFeP1OjR152aiVTkgBjKN87raRFMf8R4NuZ6o_HA?e=ayRIgF" target="_blank">View Dashboard</a>
+                        <a href="https://1drv.ms/x/c/9e426d7bd2b44799/EakpZlSFeP1OjR152aiVTkgBjKN87raRFMf8R4NuZ6o_HA?e=ayRIgF" target="_blank" rel="noopener">View Dashboard</a>
                     </div>
                 </div>
                 <!-- Optimizing Ads Spending with ML -->
@@ -61,7 +87,7 @@
                     <div class="project-content">
                         <h3>Optimizing Ads Spending with ML</h3>
                         <p>Analyzed ad-spend vs. sales data; trained Random Forest, SVM, XGBoost (R²≈0.988); identified top channels to optimize marketing budget.</p>
-                        <a href="https://github.com/Maha-Jr10/Sales-Prediction" target="_blank">GitHub Link</a>
+                        <a href="https://github.com/Maha-Jr10/Sales-Prediction" target="_blank" rel="noopener">GitHub Link</a>
                     </div>
                 </div>
                 <!-- Student Management System -->
@@ -70,7 +96,7 @@
                     <div class="project-content">
                         <h3>Student Management System</h3>
                         <p>Java Swing desktop app with MySQL backend for secure CRUD operations, schema design, and reporting—showcasing practical full-stack Java development.</p>
-                        <a href="https://www.linkedin.com/posts/maha-jr_java-studentmanagementsystem-jdbc-activity-7319017148058660864-1TDO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAERpPhMBaVEVTDt4J0NVkUX16cVKdD8H6sA" target="_blank">LinkedIn Post</a>
+                        <a href="https://www.linkedin.com/posts/maha-jr_java-studentmanagementsystem-jdbc-activity-7319017148058660864-1TDO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAERpPhMBaVEVTDt4J0NVkUX16cVKdD8H6sA" target="_blank" rel="noopener">LinkedIn Post</a>
                     </div>
                 </div>
                 <!-- Iris Classification -->
@@ -79,7 +105,7 @@
                     <div class="project-content">
                         <h3>Iris Flower Classification</h3>
                         <p>Complete ML pipeline: EDA, feature scaling, GridSearchCV tuning (KNN, SVM), and model evaluation with confusion matrix and decision boundary visuals.</p>
-                        <a href="https://github.com/Maha-Jr10/Iris-flower-Classification" target="_blank">GitHub Link</a>
+                        <a href="https://github.com/Maha-Jr10/Iris-flower-Classification" target="_blank" rel="noopener">GitHub Link</a>
                     </div>
                 </div>
                 <!-- Portfolio Website -->
@@ -88,16 +114,17 @@
                     <div class="project-content">
                         <h3>Portfolio Website</h3>
                         <p>Responsive HTML/CSS/JS site with sticky navbar, mobile sidebar, and animated project cards—deployed to showcase work and skills.</p>
-                        <a href="index.html" target="_blank">View Live</a>
+                        <a href="index.html" target="_blank" rel="noopener">View Live</a>
                     </div>
                 </div>
                 
             </div>
         </section>
 
-    <div class="next-page-container">
-        <a href="certificates.html" class="next-page-btn">View My Certificates</a>
-    </div>
+        <div class="next-page-container">
+            <a href="certificates.html" class="next-page-btn">Certificates</a>
+        </div>
+    </main>
 
     <footer>
         <p>© 2025 Muhammed John | Data Scientist & AI Engineering Specialist</p>

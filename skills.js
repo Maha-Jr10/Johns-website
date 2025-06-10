@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const skillCards = document.querySelectorAll(".skill-category");
 
-    // Configure the Intersection Observer
+    // Intersection Observer for card animation
     const observerOptions = {
         threshold: 0.1,
         rootMargin: "0px"
@@ -17,25 +17,55 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, observerOptions);
 
-    // Observe each skill card
     skillCards.forEach(card => {
         observer.observe(card);
     });
-});
 
-// Card flip functionality
-document.addEventListener("click", function(e) {
-    // Close all cards when clicking outside
-    if (!e.target.closest(".skill-category")) {
-        document.querySelectorAll(".skill-category").forEach(card => {
-            card.classList.remove("is-flipped");
+    // Card flip on click
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+            this.classList.toggle('flipped');
         });
-    }
-});
+    });
 
-// Prevent text selection while flipping
-document.querySelectorAll(".skill-category").forEach(card => {
-    card.addEventListener("mousedown", (e) => {
-        if (e.detail > 1) e.preventDefault();
+    // Skills filter logic (default: programming-language)
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const skill = this.getAttribute('data-skill');
+            document.querySelectorAll('.skills-summary-list li').forEach(li => {
+                if (li.getAttribute('data-skill') === skill) {
+                    li.style.display = '';
+                } else {
+                    li.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Set default filter to programming-language on load
+    const defaultSkill = "programming-language";
+    document.querySelectorAll('.skills-summary-list li').forEach(li => {
+        if (li.getAttribute('data-skill') === defaultSkill) {
+            li.style.display = '';
+        } else {
+            li.style.display = 'none';
+        }
+    });
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-skill') === defaultSkill) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+
+    // Prevent text selection while flipping
+    document.querySelectorAll(".skill-category").forEach(card => {
+        card.addEventListener("mousedown", (e) => {
+            if (e.detail > 1) e.preventDefault();
+        });
     });
 });

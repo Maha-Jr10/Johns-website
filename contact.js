@@ -1,31 +1,42 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzylcp9uKSP6C_bBPWNQdLysi4ONM_E6JmCs9K37k4M79QpkgMktucTgoTWUIgrIdg6/exec'; // Replace with your actual Google Apps Script URL
-const form = document.forms['submit-to-google-sheet'];
-const msg = document.getElementById("msg");
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.contact-form');
+    const msg = document.createElement('div');
+    msg.className = 'msg';
+    form.appendChild(msg);
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    msg.style.display = "inline-block";
-    msg.innerHTML = "Sending...";
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
         .then(response => {
             if (response.ok) {
-                msg.innerHTML = "Message sent successfully!";
-                setTimeout(function(){
-                    msg.innerHTML = "";
-                    msg.style.display = "none";
-                }, 5000);
+                msg.textContent = "Message sent successfully!";
+                msg.style.display = "block";
+                msg.style.backgroundColor = "#eafff5";
+                msg.style.color = "#009e60";
                 form.reset();
+                setTimeout(() => {
+                    msg.style.display = "none";
+                }, 3000);
             } else {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                return response.json().then(data => {
+                    throw new Error(data.error || "Failed to send message. Please try again.");
+                });
             }
         })
         .catch(error => {
-            console.error('Error!', error.message);
-            msg.innerHTML = `Error: ${error.message}`;
-            setTimeout(function(){
-                msg.innerHTML = "";
-                msg.style.display = "none";
-            }, 4000);
+            msg.textContent = error.message || "Failed to send message. Please try again.";
+            msg.style.display = "block";
+            msg.style.backgroundColor = "#ffeaea";
+            msg.style.color = "#d32f2f";
         });
+    });
 });

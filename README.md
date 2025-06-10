@@ -1,117 +1,51 @@
+# The John Archive
 
-# 📁 The John Archive — Personal Portfolio Website
-
-Welcome to the source code of **The John Archive**, my personal portfolio designed to showcase my background, projects, skills, and achievements as a Data Scientist and AI Engineering Specialist.
-
-> 🧠 "Driving Intelligence Through Data & AI"
+Welcome to my personal portfolio website!  
+This site showcases my background, skills, projects, certifications, and contact information as a Data Scientist & AI Engineering Specialist.
 
 ---
 
-## 🔗 Live Site
+## 🌐 Live Demo
 
-📍 **View the Portfolio:** https://maha-jr10.github.io/Johns-website
-
----
-
-## 📌 Overview
-
-This portfolio was built to:
-
-- Track and document my **growth and progress**
-- Present my **data and AI projects** with clarity
-- Provide an organized and professional overview of my **education, skills, and certifications**
-- Serve as a **personal knowledge archive**
-
----
-
-## 🛠️ Built With
-
-- **HTML5**
-- **CSS3**
-- **JavaScript**
-- **Deployed via GitHub Pages**
+**No need to clone!**  
+👉 [Visit the Portfolio Online](https://maha-jr10.github.io/Johns-website/)
 
 ---
 
 ## 🚀 Features
 
-- Responsive design across devices
-- Smooth navigation and clean layout
-- Highlighted sections:
-  - **About Me**
-  - **Education**
-  - **Skills**
-  - **Projects**
-  - **Certificates**
-  - **Contact**
-- Typewriter animation on landing page
-- Custom color scheme and branding
+- **Home:** Quick intro and navigation.
+- **About:** My background, interests, and professional summary.
+- **Education:** Academic history and relevant coursework.
+- **Experience:** Work experience and key achievements.
+- **Skills:** Technical and soft skills overview.
+- **Projects:** Selected data science and AI projects with details.
+- **Certificates:** Verified certifications and achievements from leading platforms.
+- **Contact:** Contact form and social links for professional inquiries.
 
 ---
 
-## 🧩 Repository Structure
+## 🛠️ Tech Stack
 
-```
-├── index.html # Home page
-├── index.css
-├── index.js
-│
-├── about.html # “About Me” section
-├── about.css
-├── about.js
-│
-├── skills.html # Skills section
-├── skills.css
-├── skills.js
-│
-├── projects.html # Projects section
-├── projects.css
-├── projects.js
-│
-├── education.html # Education section
-├── education.css
-├── education.js
-│
-├── certificates.html # Certificates section
-├── certificates.css
-├── certificates.js
-│
-├── contact.html # Contact section
-├── contact.css
-├── contact.js
-│
-├── shared.css # Shared styles across pages
-├── shared.js # Shared scripts
-│
-├── Project_images/ # Project-specific images
-├── images/ # About images
-├── PDFs/ # contains CV and 5-star SQL Badge
-├── certificates/ # contains all certificates
-│
-└── README.md # Project documentation (This file)
-
-```
+- **HTML5, CSS3, JavaScript (ES6+)**
+- **Responsive Design:** Mobile-friendly layouts
+- **Font Awesome:** For icons
+- **Formspree:** For contact form submissions (no backend required)
 
 ---
 
-## ✨ Recent Updates
+## 📄 How to Use
 
-- ✅ All site pages completed
-- 🛠️ Project section fully integrated
-- 🎨 Minor layout and visual improvements across all sections
-
----
-
-## 📩 Contact
-
-If you have feedback, ideas, or would like to collaborate, feel free to connect with me through the contact section on the site.
+- Simply [visit the website](https://maha-jr10.github.io/Johns-website/) in your browser.
+- Navigate using the menu to explore all sections.
+- To contact me, use the form on the Contact page (messages are sent via Formspree).
 
 ---
 
-## 📜 License
+## 📬 Contact
 
-This repository is intended for personal portfolio purposes. Please do not clone or reproduce content without permission.
+For questions, collaborations, or feedback, please use the [Contact](https://maha-jr10.github.io/Johns-website/contact.html) page or connect with me on LinkedIn.
 
 ---
 
-**Built by Muhammed John** — with a passion for learning, growing, and building intelligent systems.
+**Thank you for visiting The John Archive!**

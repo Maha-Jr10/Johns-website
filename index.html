@@ -17,6 +17,7 @@
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="education.html">Education</a></li>
+                <li><a href="experience.html">Experience</a></li>
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="certificates.html">Certificates</a></li>
@@ -28,8 +29,9 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <a href="index.html" class="active">Home</a>
-        <a href="about.html">About Me</a>
+        <a href="about.html">About</a>
         <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
         <a href="skills.html">Skills</a>
         <a href="projects.html">Projects</a>
         <a href="certificates.html">Certificates</a>
@@ -39,20 +41,41 @@
     <section id="hero" class="hero">
         <div class="hero-content">
             <h1>Driving Intelligence Through Data & AI</h1>
-            <img src="images/profile photo rd.jpg" alt="Muhammed John" class="profile-pic">
+            <img src="about_images/profile photo rd.jpg" alt="Muhammed John" class="profile-pic">
             <p class="typewriter"></p>
-
             <div class="cta-container">
-                <a href="about.html" class="next-page-btn abt">About Me</a>
-                <a href="projects.html" class="next-page-btn ">Projects</a>
+                <div class="cta-row">
+                    <a href="about.html" class="next-page-btn abt">About Me</a>
+                    <a href="projects.html" class="next-page-btn">Projects</a>
+                </div>
             </div>
-
         </div>
     </section>
 
+    <!-- Download CV Button (after hero) -->
+    <div class="download-cv-standalone">
+        <button class="next-page-btn download-cv-btn" id="downloadCvBtn">
+            <i class="fa fa-download"></i> Download CV
+        </button>
+    </div>
+
+    <!-- Modal for language selection -->
+    <div id="cvModal" class="cv-modal">
+        <div class="cv-modal-content">
+            <span class="cv-close" id="closeCvModal">&times;</span>
+            <h2>Select CV Language</h2>
+            <a href="certificates/PDFs/Muhammed John-CV_en-pro.pdf" download class="cv-lang-btn en">
+                <i class="fa fa-file-pdf"></i> English
+            </a>
+            <a href="certificates/PDFs/Muhammed John-CV_fr-pro.pdf" download class="cv-lang-btn fr">
+                <i class="fa fa-file-pdf"></i> Français
+            </a>
+        </div>
+    </div>
+
     <!-- Latest Update Banner -->
     <div class="update-banner">
-        <p>🚀 <strong>Last Update: </strong>May 2025</p>
+        <p>🚀 <strong>Last Update: </strong>June 2025</p>
     </div>
 
     <footer>
@@ -61,5 +84,6 @@
 
     <script src="index.js"></script>
     <script src="shared.js"></script>
+
 </body>
 </html>

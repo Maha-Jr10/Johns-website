@@ -18,6 +18,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="education.html">Education</a></li>
+                <li><a href="experience.html">Experience</a></li>
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="certificates.html" class="active">Certificates</a></li>
@@ -29,110 +30,213 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
+        <a href="about.html">About</a>
         <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
         <a href="skills.html">Skills</a>
         <a href="projects.html">Projects</a>
         <a href="certificates.html" class="active">Certificates</a>
         <a href="contact.html">Contact</a>
     </div>
 
+    <!-- Professional Summary -->
+    <section class="profile-summary" style="max-width: 820px; margin: 2.5rem auto 2rem; background: linear-gradient(120deg, #181a2a 60%, #232b50 100%); border-radius: 18px; box-shadow: 0 4px 32px #00cec950, 0 1.5px 0 #00fff7 inset; padding: 2.5rem 2rem 2rem 2rem; border: 2px solid #00cec950; position: relative; overflow: hidden;">
+        <h1 style="margin-top:0; font-family:'Montserrat',sans-serif; font-size:2.4rem; color:#00fff7; letter-spacing:1.5px; text-shadow:0 2px 12px #00cec980; margin-bottom:0.7rem; position:relative; z-index:1;">
+            <i class="fas fa-certificate" style="color:#4e97d4; margin-right:0.7rem;"></i>
+            Certificates &amp; Achievements
+        </h1>
+        <span class="headline" style="font-size:1.5rem; color:#00fff7; display:block; margin-bottom:1rem; font-weight:500; text-align:center;">
+            Data Scientist &amp; AI Engineering Specialist
+        </span>
+        <div class="summary-main" style="font-size:1.22rem; color:#ccefff; line-height:1.7; margin:0 auto 1rem auto; max-width:700px; font-family:'Roboto',Arial,sans-serif; letter-spacing:0.2px; position:relative; z-index:1;">
+            with a proven track record in <b style="color:#00fff7;">machine learning</b>, <b style="color:#00fff7;">data analysis</b>, and <b style="color:#00fff7;">software engineering</b>.
+        </div>
+        <span class="summary-passion" style="color:#b2f7ef; display:block; margin-bottom:0.5rem; text-align:center;">
+            Passionate about solving real-world problems with data-driven solutions.
+        </span>
+        <span class="summary-note" style="color:#4e97d4; display:block; margin-bottom:1.5rem; text-align:center;">
+            Below are selected certifications and achievements from leading platforms.
+        </span>
+        <div class="summary-bg1" style="position:absolute;top:-40px;right:-40px;width:120px;height:120px;z-index:0;opacity:0.12;pointer-events:none;background:radial-gradient(circle,#00fff7 0%,transparent 70%);"></div>
+        <div class="summary-bg2" style="position:absolute;bottom:-40px;left:-40px;width:120px;height:120px;z-index:0;opacity:0.10;pointer-events:none;background:radial-gradient(circle,#4e97d4 0%,transparent 70%);"></div>
+    </section>
+
+    <!-- Certificates Section -->
     <section class="certificate-section">
-        <h1>My Certificates</h1>
-        <p>Click on a certificate to view it:</p>
+        <h2 style="color:#00fff7; margin-bottom:1rem;">Featured Certificates</h2>
+        <div class="certificate-filter" style="margin-bottom:1.5rem; text-align:center;">
+            <label for="cert-filter" style="color:#b2f7ef; font-weight:500; margin-right:0.5rem;">Filter by:</label>
+            <select id="cert-filter" style="padding:0.4rem 1rem; border-radius:6px; border:1px solid #00cec950; background:#181a2a; color:#00fff7;">
+                <option value="all">All</option>
+                <option value="kaggle">Kaggle</option>
+                <option value="hackerrank">HackerRank</option>
+                <option value="oracle">Oracle</option>
+                <option value="freecodecamp">freeCodeCamp</option>
+                <option value="datacamp">DataCamp</option>
+            </select>
+        </div>
         <div class="certificate-grid">
-            <div class="certificate-card" data-certificate="certificates/DataCamp/Generative AI Concepts.png">
-                <span class="count-badge" title="Number of certificates in this category">1</span>
-                <h2>Generative AI Concepts</h2>
-                <p>DataCamp</p>
-            </div>
-            <div class="certificate-card" data-certificate="certificates/DataCamp/Introduction to Data Literacy.png">
-                <span class="count-badge" title="Number of certificates in this category">1</span>
-                <h2>Introduction to Data Literacy</h2>
-                <p>DataCamp</p>
-            </div>
+            <!-- 1. Machine Learning & AI -->
             <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Intermediate Machine Learning.png">
-                <span class="count-badge" title="Number of certificates in this category">1</span>
-                <h2>Intermediate Machine Learning</h2>
-                <p>Kaggle</p>
-            </div>
-            <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Feature Engineering.png">
-                <span class="count-badge" title="Number of certificates in this category">1</span>
-                <h2>Feature Engineering</h2>
-                <p>Kaggle</p>
-            </div>
-            <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Data Cleaning.png">
-                <span class="count-badge" title="Number of certificates in this category">1</span>
-                <h2>Data Cleaning</h2>
-                <p>Kaggle</p>
-            </div>
-            <div class="certificate-card" data-certificate="certificates/Oracle Certs/DD CC.png, certificates/Oracle Certs/DD EC.png">
-                <span class="count-badge" title="Number of certificates in this category">2</span>
-                <h2>Database Design</h2>
-                <p>Oracle</p>
-            </div>
-            <div class="certificate-card" data-certificate="certificates/Oracle Certs/SQL CC.png, certificates/Oracle Certs/SQL EC.png, certificates/HackerRank Certs/sql_advanced.png, certificates/HackerRank Certs/sql_inter.png, certificates/HackerRank Certs/sql_basic.png">
-                <span class="count-badge" title="Number of certificates in this category">5</span>
-                <h2>SQL</h2>
-                <p>Oracle, HackerRank</p>
+                <img src="/certificates/logos/kaggle.png" alt="Kaggle" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
+                <span class="count-badge">1</span>
+                <h3>Intermediate Machine Learning</h3>
+                <p>Kaggle &nbsp;|&nbsp; <span style="color:#b2f7ef;">2025</span></p>
+                <a href="https://www.kaggle.com/learn/certification/muhammedjohn/intermediate-machine-learning" target="_blank" style="color:#4e97d4;font-size:0.95rem;">View Credential</a>
             </div>
             <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Intro to Machine Learning.png">
+                <img src="/certificates/logos/kaggle.png" alt="Kaggle" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
                 <span class="count-badge" title="Number of certificates in this category">1</span>
-                <h2>Intro to Machine Learning</h2>
-                <p>Kaggle</p>
+                <h3>Intro to Machine Learning</h3>
+                <p>Kaggle &nbsp;|&nbsp; <span style="color:#b2f7ef;">2024</span></p>
+                <a href="https://www.kaggle.com/learn/certification/muhammedjohn/intro-to-machine-learning" target="_blank" style="color:#4e97d4;font-size:0.95rem;">View Credential</a>
             </div>
+            <!-- 2. Data Analysis & Pandas -->
             <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Pandas.png">
+                <img src="/certificates/logos/kaggle.png" alt="Kaggle" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
                 <span class="count-badge" title="Number of certificates in this category">1</span>
-                <h2>Pandas</h2>
-                <p>Kaggle</p>
+                <h3>Pandas</h3>
+                <p>Kaggle &nbsp;|&nbsp; <span style="color:#b2f7ef;">2025</span></p>
+                <a href="https://www.kaggle.com/learn/certification/muhammedjohn/pandas" target="_blank" style="color:#4e97d4;font-size:0.95rem;">View Credential</a>
             </div>
-            <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Python.png, certificates/HackerRank Certs/python_basic.png">
-                <span class="count-badge" title="Number of certificates in this category">2</span>
-                <h2>Python</h2>
-                <p>Kaggle, HackerRank</p>
-            </div>
-            <div class="certificate-card" data-certificate="certificates/HackerRank Certs/sw.png">
+            <!-- 3. Python -->
+            <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Python.png">
+                <img src="/certificates/logos/kaggle.png" alt="Kaggle" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
                 <span class="count-badge" title="Number of certificates in this category">1</span>
-                <h2>Software Engineer Intern Role</h2>
-                <p>HackerRank</p>
+                <h3>Python</h3>
+                <p>Kaggle &nbsp;|&nbsp; <span style="color:#b2f7ef;">2024</span></p>
+                <a href="https://www.kaggle.com/learn/certification/muhammedjohn/python" target="_blank" style="color:#4e97d4;font-size:0.95rem;">View Credential</a>
             </div>
-            <div class="certificate-card" data-certificate="certificates/freeCodeCamp Certs/freeCodeCamp JavaScript Certificate.png, certificates/HackerRank Certs/JS inter.png, certificates/HackerRank Certs/JS basic.png">
+            <div class="certificate-card" data-certificate="certificates/HackerRank Certs/python_basic.png">
+                <img src="/certificates/logos/hackerrank.png" alt="HackerRank" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h3>Python</h3>
+                <p>HackerRank &nbsp;|&nbsp; <span style="color:#b2f7ef;">2024</span></p>
+                <a href="https://www.hackerrank.com/certificates/iframe/0d10b610763a" target="_blank" style="color:#4e97d4;font-size:0.95rem;">View Credential</a>
+            </div>
+            <!-- 4. SQL -->
+            <div class="certificate-card" data-certificate="certificates/HackerRank Certs/sql_advanced.png, certificates/HackerRank Certs/sql_inter.png, certificates/HackerRank Certs/sql_basic.png">
+                <img src="/certificates/logos/hackerrank.png" alt="HackerRank" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
                 <span class="count-badge" title="Number of certificates in this category">3</span>
-                <h2>JavaScript Algorithms and Data Structures</h2>
-                <p>freeCodeCamp, HackerRank</p>
+                <h3>SQL</h3>
+                <p>HackerRank &nbsp;|&nbsp; <span style="color:#b2f7ef;">2024</span></p>
+                <a href="https://www.hackerrank.com/certificates/iframe/a85cbd0adb30" target="_blank" style="color:#4e97d4;font-size:0.95rem;">View Credential</a>
             </div>
-            <div class="certificate-card" data-certificate="certificates/freeCodeCamp Certs/freeCodeCamp Responsive Design Certificate.png, certificates/HackerRank Certs/CSS basic.png">
+            <div class="certificate-card" data-certificate="certificates/Oracle Certs/SQL CC.png, certificates/Oracle Certs/SQL EC.png">
+                <img src="/certificates/logos/oracle.png" alt="Oracle" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
                 <span class="count-badge" title="Number of certificates in this category">2</span>
-                <h2>Responsive Web Design</h2>
-                <p>freeCodeCamp, HackerRank</p>
+                <h3>SQL</h3>
+                <p>Oracle &nbsp;|&nbsp; <span style="color:#b2f7ef;">2024</span></p>
+            </div>
+            <!-- 5. Feature Engineering & Data Cleaning -->
+            <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Feature Engineering.png">
+                <img src="/certificates/logos/kaggle.png" alt="Kaggle" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h3>Feature Engineering</h3>
+                <p>Kaggle &nbsp;|&nbsp; <span style="color:#b2f7ef;">2025</span></p>
+                <a href="https://www.kaggle.com/learn/certification/muhammedjohn/feature-engineering" target="_blank" style="color:#4e97d4;font-size:0.95rem;">View Credential</a>
+            </div>
+            <div class="certificate-card" data-certificate="certificates/kaggle/Muhammed John - Data Cleaning.png">
+                <img src="/certificates/logos/kaggle.png" alt="Kaggle" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h3>Data Cleaning</h3>
+                <p>Kaggle &nbsp;|&nbsp; <span style="color:#b2f7ef;">2025</span></p>
+                <a href="https://www.kaggle.com/learn/certification/muhammedjohn/data-cleaning" target="_blank" style="color:#4e97d4;font-size:0.95rem;">View Credential</a>
+            </div>
+            <!-- 6. Problem Solving -->
+            <div class="certificate-card" data-certificate="certificates/HackerRank Certs/problem_solving.png">
+                <img src="/certificates/logos/hackerrank.png" alt="HackerRank" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h3>Problem Solving</h3>
+                <p>HackerRank &nbsp;|&nbsp; <span style="color:#b2f7ef;">2025</span></p>
+                <a href="https://www.hackerrank.com/certificates/iframe/0cf718036971" target="_blank" style="color:#4e97d4;font-size:0.95rem;">View Credential</a>
+            </div>
+            <!-- 7. JavaScript & Web -->
+            <div class="certificate-card" data-certificate="certificates/HackerRank Certs/JS inter.png, certificates/HackerRank Certs/JS basic.png">
+                <img src="/certificates/logos/hackerrank.png" alt="HackerRank" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
+                <span class="count-badge" title="Number of certificates in this category">2</span>
+                <h3>JavaScript</h3>
+                <p>HackerRank &nbsp;|&nbsp; <span style="color:#b2f7ef;">2024</span></p>
+                <a href="https://www.hackerrank.com/certificates/iframe/0443ef41053e" target="_blank" style="color:#4e97d4;font-size:0.95rem;">View Credential</a>
+            </div>
+            <div class="certificate-card" data-certificate="certificates/freeCodeCamp Certs/freeCodeCamp JavaScript Certificate.png">
+                <img src="/certificates/logos/freecodecamp.png" alt="freeCodeCamp" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h3>JavaScript Algorithms and Data Structures (Beta)</h3>
+                <p>freeCodeCamp &nbsp;|&nbsp; <span style="color:#b2f7ef;">2024</span></p>
+                <a href="https://www.freecodecamp.org/certification/MUHAMMED_JOHN/javascript-algorithms-and-data-structures-v8" target="_blank" style="color:#4e97d4;font-size:0.95rem;">View Credential</a>
+            </div>
+            <div class="certificate-card" data-certificate="certificates/freeCodeCamp Certs/freeCodeCamp Responsive Design Certificate.png">
+                <img src="/certificates/logos/freecodecamp.png" alt="freeCodeCamp" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h3>Responsive Web Design</h3>
+                <p>freeCodeCamp &nbsp;|&nbsp; <span style="color:#b2f7ef;">2024</span></p>
+                <a href="https://www.freecodecamp.org/certification/MUHAMMED_JOHN/responsive-web-design" target="_blank" style="color:#4e97d4;font-size:0.95rem;">View Credential</a>
+            </div>
+            <!-- 8. Database Design -->
+            <div class="certificate-card" data-certificate="certificates/Oracle Certs/DD CC.png, certificates/Oracle Certs/DD EC.png">
+                <img src="/certificates/logos/oracle.png" alt="Oracle" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
+                <span class="count-badge" title="Number of certificates in this category">2</span>
+                <h3>Database Design</h3>
+                <p>Oracle &nbsp;|&nbsp; <span style="color:#b2f7ef;">2024</span></p>
+            </div>
+            <!-- 9. Generative AI Concepts -->
+            <div class="certificate-card" data-certificate="certificates/DataCamp/Generative AI Concepts.png">
+                <img src="/certificates/logos/datacamp.png" alt="DataCamp" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h3>Generative AI Concepts</h3>
+                <p>DataCamp &nbsp;|&nbsp; <span style="color:#b2f7ef;">2025</span></p>
+                <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/5b9c2025a604f4b38ef57ac579542b1a6353fdf5" target="_blank" style="color:#4e97d4;font-size:0.95rem;">View Credential</a>
+            </div>
+            <!-- 10. Introduction to Data Literacy -->
+            <div class="certificate-card" data-certificate="certificates/DataCamp/Introduction to Data Literacy.png">
+                <img src="/certificates/logos/datacamp.png" alt="DataCamp" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
+                <span class="count-badge">1</span>
+                <h3>Introduction to Data Literacy</h3>
+                <p>DataCamp &nbsp;|&nbsp; <span style="color:#b2f7ef;">2025</span></p>
+                <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/f96dd38c4d7992c04b44ca753c4b5d44197207e7" target="_blank" style="color:#4e97d4;font-size:0.95rem;">View Credential</a>
+            </div>
+            <!-- 11. CSS -->
+            <div class="certificate-card" data-certificate="certificates/HackerRank Certs/CSS basic.png">
+                <img src="/certificates/logos/hackerrank.png" alt="HackerRank" style="height:28px;vertical-align:middle;margin-bottom:0.5rem;">
+                <span class="count-badge" title="Number of certificates in this category">1</span>
+                <h3>CSS</h3>
+                <p>HackerRank &nbsp;|&nbsp; <span style="color:#b2f7ef;">2024</span></p>
             </div>
         </div>
     </section>
 
     <!-- Achievements & Documents Section -->
     <section class="achievement-section">
-        <h1>Other Achievements & Documents</h1>
-        <p>Click on an achievement or document to view more:</p>
+        <h2 style="color:#00fff7; margin-bottom:1rem;">Other Achievements & Documents</h2>
         <div class="achievement-grid">
-            <div class="achievement-card" data-document="PDFs/sql-5-star.pdf">
-                <span class="count-badge" title="Number of achievement(s)/document(s) in this category">1</span>
-                <h2>5-Star SQL Badge</h2>
+            <div class="achievement-card" data-document="certificates/PDFs/sql-5-star.pdf">
+                <img src="/certificates/logos/hackerrank.png" alt="HackerRank" style="height:24px;vertical-align:middle;margin-bottom:0.5rem;">
+                <span class="count-badge">1</span>
+                <h3>5-Star SQL Badge</h3>
                 <p>HackerRank Achievement</p>
             </div>
-            
-            <!-- CV Download Section -->
-            <div class="achievement-card" data-document="CV.pdf">
-                <span class="count-badge" title="Download my CV">1</span>
-                <h2>My CV</h2>
-                <p>Professional CV</p>
-                <a href="PDFs/CV.pdf" download="Muhammed_John_CV.pdf" class="download-btn">Download CV</a>
-            </div> 
+            <div class="achievement-card" data-document="/certificates/PDFs/Muhammed John-CV_en-pro.pdf, /certificates/PDFs/Muhammed John-CV_fr-pro.pdf">
+                <img src="/certificates/logos/cv.png" alt="CV" style="height:24px;vertical-align:middle;margin-bottom:0.5rem;">
+                <span class="count-badge">2</span>
+                <h3>My CV</h3>
+                <p>Professional CV <br>(English &amp; French)</p>
+                <div style="margin-bottom:0.5rem;">
+                    <a href="/certificates/PDFs/Muhammed John-CV_en-pro.pdf" target="_blank" style="color:#4e97d4;font-size:0.95rem;margin-right:1rem;" class="no-modal">View CV (EN)</a>
+                    <a href="/certificates/PDFs/Muhammed John-CV_fr-pro.pdf" target="_blank" style="color:#4e97d4;font-size:0.95rem;" class="no-modal">View CV (FR)</a>
+                </div>
+            </div>
         </div>
-
         <div class="next-page-container">
             <a href="contact.html" class="next-page-btn">Contact Me</a>
         </div>
+    </section>
 
+    <!-- Recruiter Call-to-Action -->
+    <section style="text-align:center; margin:2rem 0;">
+        <p style="font-size:1.1rem; color:#b2f7ef;">
+            Interested in collaborating or hiring? <a href="mailto:your.email@example.com" style="color:#00fff7;text-decoration:underline;">Email me directly</a> or use the <a href="contact.html" style="color:#00fff7;text-decoration:underline;">contact form</a>.
+        </p>
     </section>
 
     <!-- Modal -->
