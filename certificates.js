@@ -91,3 +91,19 @@ document.getElementById('cert-filter').addEventListener('change', function () {
         card.style.display = show ? '' : 'none';
     });
 });
+
+const filterDropdown = document.getElementById('platformFilter');
+    const certificateCards = document.querySelectorAll('.certificate-card');
+
+    filterDropdown.addEventListener('change', () => {
+        const selectedPlatform = filterDropdown.value;
+
+        certificateCards.forEach(card => {
+            const platform = card.getAttribute('data-platform');
+            if (selectedPlatform === 'all' || platform === selectedPlatform) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
