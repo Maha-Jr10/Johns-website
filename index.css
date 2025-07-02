@@ -93,17 +93,6 @@ h1:hover {
     flex-wrap: wrap; /* ensures responsiveness */
 }
 
-.cta-row {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.cta-row:last-child {
-    margin-bottom: 0;
-}
-
 .typewriter {
     font-size: 1.2rem;
     margin-bottom: 1rem;
@@ -137,47 +126,6 @@ h1:hover {
     color: #fff;
     transform: translateY(-3px) scale(1.04);
     box-shadow: 0 4px 16px rgba(0, 206, 201, 0.22);
-}
-
-.download-cv-standalone {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0;
-}
-
-/* Unique styling for Download CV button */
-.download-cv-btn {
-    background: linear-gradient(90deg, #ffcc00 0%, #00cec9 100%);
-    color: #181a2a;
-    border: 2px solid #ffcc00;
-    box-shadow: 0 4px 16px rgba(255, 204, 0, 0.18), 0 2px 8px rgba(0, 206, 201, 0.13);
-    font-weight: bold;
-    letter-spacing: 1px;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.4s, color 0.3s, border 0.3s, transform 0.2s;
-    padding: 0.8rem 2.2rem;
-    border-radius: 8px;
-    font-size: 1.15rem;
-    margin-top: 0;
-}
-
-.download-cv-btn i {
-    margin-right: 0.5em;
-    color: #086f6d;
-    transition: color 0.3s;
-}
-
-.download-cv-btn:hover {
-    background: linear-gradient(90deg, #00cec9 0%, #ffcc00 100%);
-    color: #fff;
-    border: 2px solid #00cec9;
-    transform: scale(1.06) translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 206, 201, 0.22);
-}
-
-.download-cv-btn:hover i {
-    color: #fff;
 }
 
 /* Latest Update Banner */
@@ -297,126 +245,5 @@ h1:hover {
     .update-banner {
         font-size: 0.85rem;
         padding: 0.6rem 1rem;
-    }
-}
-
-/* Responsive adjustments for the CV modal and language buttons */
-@media only screen and (max-width: 900px) {
-    .cv-modal-content {
-        padding: 1.5rem 1rem;
-        min-width: 0;
-        width: 80vw;
-        max-width: 400px;
-    }
-    .cv-lang-btn {
-        font-size: 1rem;
-        padding: 0.6rem 1.2rem;
-    }
-}
-
-@media only screen and (max-width: 640px) {
-    .cv-modal-content {
-        min-width: 0;
-        width: 70vw;
-        border-radius: 6px;
-        text-align: center;
-        font-size: 0.5;
-    }
-    .cv-lang-btn {
-        display: inline-block;
-        margin: auto;
-        padding: 0.2rem 0;
-        border-radius: 5px;
-        text-align: center;
-        font-size: 0.8rem;
-    }
-
-    .cv-modal-content a{
-        font-size: 0.8rem;
-    }
-    .cv-close {
-        top: 2px;
-        right: 6px;
-        font-size: 1rem;
-        padding: 0.05em 0.2em;
-    }
-    .cv-modal h2 {
-        font-size: 1rem;
-        margin-bottom: 0.4rem;
-        text-align: center;
-    }
-}
-
-/* Modal Styles */
-.cv-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(24,26,42,0.85);
-    justify-content: center;
-    align-items: center;
-}
-
-.cv-modal-content {
-    background: #22263a;
-    padding: 2rem 2.5rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 8px 32px rgba(0,206,201,0.18);
-    position: relative;
-    min-width: 260px;
-}
-
-.cv-close {
-    position: absolute;
-    top: 12px; right: 18px;
-    font-size: 2rem;
-    color: #ffcc00;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.cv-close:hover {
-    color: #00cec9;
-}
-
-.cv-lang-btn {
-    display: inline-block;
-    margin: 1rem 1.2rem 0 1.2rem;
-    padding: 0.7rem 2rem;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    background: linear-gradient(90deg, #00cec9 0%, #ffcc00 100%);
-    color: #181a2a;
-    border: none;
-    text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0,206,201,0.13);
-    transition: background 0.3s, color 0.3s, transform 0.2s;
-}
-
-.cv-lang-btn i {
-    margin-right: 0.5em;
-    color: #086f6d;
-    transition: color 0.3s;
-}
-
-.cv-lang-btn:hover {
-    background: linear-gradient(90deg, #ffcc00 0%, #00cec9 100%);
-    color: #fff;
-    transform: scale(1.05);
-}
-
-.cv-lang-btn:hover i {
-    color: #fff;
-}
-
-@media only screen and (max-width: 640px) {
-    .download-cv-btn {
-        font-size: 0.85rem;
-        padding: 0.5rem 1.1rem;
-        border-radius: 6px;
     }
 }

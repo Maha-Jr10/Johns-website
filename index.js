@@ -13,16 +13,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     typeEffect();
 });
-
-document.getElementById('downloadCvBtn').onclick = function() {
-    document.getElementById('cvModal').style.display = 'flex';
-};
-document.getElementById('closeCvModal').onclick = function() {
-    document.getElementById('cvModal').style.display = 'none';
-};
-window.onclick = function(event) {
-    var modal = document.getElementById('cvModal');
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
-};
