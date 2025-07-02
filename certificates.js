@@ -79,6 +79,8 @@ document.getElementById('cert-filter').addEventListener('change', function () {
             show = true;
         } else if (value === 'kaggle' && card.innerHTML.toLowerCase().includes('kaggle')) {
             show = true;
+        } else if (value === 'cisco' && card.innerHTML.toLowerCase().includes('cisco')) {
+            show = true;
         } else if (value === 'hackerrank' && card.innerHTML.toLowerCase().includes('hackerrank')) {
             show = true;
         } else if (value === 'oracle' && card.innerHTML.toLowerCase().includes('oracle')) {
