@@ -60,6 +60,10 @@
     transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
     margin: 0 0.2rem;
     text-align: center;
+
+    /* Bounce animation on load */
+    animation: bounce 4s ease;
+
 }
 .social-link:hover, .social-link:focus {
     transform: scale(1.13) rotate(-4deg);
@@ -450,6 +454,9 @@ button.cta:hover, button.cta:focus {
     #msg {
         font-size: 0.9rem;
         padding: 0.5rem 0.7rem;
+    }
+    .work-badge{
+        display: block;
     }
 }
 

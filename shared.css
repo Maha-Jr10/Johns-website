@@ -1,6 +1,27 @@
 /* Google Fonts for a modern look */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
 
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-10px); }
+    40% { transform: translateX(10px); }
+    60% { transform: translateX(-10px); }
+    80% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
 body {
     font-family: 'Roboto', "Arial", sans-serif;
     margin: 0;
@@ -8,6 +29,7 @@ body {
     background: linear-gradient(135deg, #1e1e2f, #3c3c54 80%);
     color: #fff;
     min-height: 100vh;
+
 }
 
 /* Navbar */
